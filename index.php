@@ -2,6 +2,22 @@
   require_once 'header/header.php';
   include_once 'life/php/db.php';
   include_once 'life/php/indexpage.php';
+
+  function truncate($string)
+  {
+    // strip tags to avoid breaking any html
+    $string = strip_tags($string);
+    if (strlen($string) > 50) {
+
+        // truncate string
+        $stringCut = substr($string, 0, 50);
+        $endPoint = strrpos($stringCut, ' ');
+
+        //if the string doesn't contain any space then it will cut without word basis.
+        $string = $endPoint? substr($stringCut, 0, $endPoint) : substr($stringCut, 0);
+    }
+    return $string;
+  }
 ?>
 <!-- BANNER SLIDER
     ================================================== -->
@@ -103,7 +119,7 @@
             <h4> OUR PROGRAMS </h4>
             <p class="el-head">Weekly meeting &amp; prayer</p>
             <span>Weekly</span>
-            <p class="el-cta"><a class="btn btn-primary" href="event-single.php" role="button">Details &rarr;</a></p>
+            <p class="el-cta"><a class="btn btn-primary" href="weeklyProgram.php" role="button">Details &rarr;</a></p>
           </div>
 
           <?php 
@@ -141,7 +157,7 @@
       <!-- This Blog list below will later be replaced by the commented php codes below -->
       <!--Blog list-->
       
-      <div class="row has-margin-bottom">
+      <!-- <div class="row has-margin-bottom">
         <div class="col-md-4 col-sm-4"> <img class="img-responsive center-block" src="images/blog-thumb-1.jpg" alt="bulletin blog"> </div>
         <div class="col-md-8 col-sm-8 bulletin">
           <h4 class="media-heading">Perseverance of the Saints </h4>
@@ -150,7 +166,7 @@
           <a class="btn btn-primary" href="blog-single.php" role="button">Read Article →</a> </div>
       </div>
       
-      <!--Blog list-->
+      Blog list-
       
       <div class="row">
         <div class="col-md-4 col-sm-4"> <img class="img-responsive center-block" src="images/blog-thumb-2.jpg" alt="bulletin blog"> </div>
@@ -160,27 +176,30 @@
           <p class="media-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla convallis egestas rhoncus. Donec facilisis fermentum sem, ac viverra ante luctus vel. Donec vel mauris quam. Lorem ipsum dolor sit amet...</p>
           <a class="btn btn-primary" href="blog-single.php" role="button">Read Article →</a> 
         </div>
-      </div>
-    </div>
+      </div> -->
+    
 
     <!-- The commented php block below will later replace the onces above -->
-    <!-- <?php 
+    <?php 
         $article  = $call->articles();
 
         while($articles = $article->fetch(PDO::FETCH_ASSOC))
         {
       ?>
-      <div class="row has-margin-bottom">
-        <div class="col-md-4 col-sm-4"> <img class="img-responsive center-block" src="<?php echo 'images/article/'.$articles['id'].'.jpg'; ?>" style="max-height: 177px; max-width: 265px;" alt="bulletin blog"> </div>
+      <div class="row has-margin-xs-bottom">
+        <div class="col-md-4 col-sm-4"> <img class="img-responsive center-block" src="<?php echo 'images/article/'.$articles['id'].'.jpg'; ?>" style="max-height: 177px; max-width: 265px;" alt="bulletin blog"> 
+        </div>
         <div class="col-md-8 col-sm-8 bulletin">
           <h4 class="media-heading"><?= $articles['article_title']; ?> </h4>
-          <p><?= $articles['date_added']; ?> <a href="#" class="link-reverse"><?= $articles['article_author']; ?></a></p>
+          <p><?= $articles['date_added']; ?> <a href="#" class="link-reverse"><?= truncate($articles['article_author']); ?></a></p>
           <p> <?= $articles['article_details']; ?></p>
-          <a class="btn btn-primary" href="blog-single.php" role="button">Read Article →</a> </div>
+          <a class="btn btn-primary" href="blog-single.php" role="button">Read Article →</a> 
+        </div>
       </div>
       <?php
         }
-      ?> -->
+      ?>
+    </div>
     <!-- // col md 9  -->
     
     <!--Latest Sermons-->

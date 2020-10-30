@@ -103,9 +103,9 @@
   $Next = nextArrow();
 
   $start = ($page - 1) * $limit;
-  $result = $conn->query("SELECT * FROM gallery WHERE day LIKE '%$day%' && month = '$month' && year = '$year' ORDER BY id DESC LIMIT $start, $limit");
+  $result = $conn->query("SELECT * FROM gallery WHERE month = '$month' && year = '$year' ORDER BY id DESC LIMIT $start, $limit");
 
-  $result1 = $conn->query("SELECT count(id) AS id FROM gallery WHERE day LIKE '%$day' && month = '$month' && year = '$year'");
+  $result1 = $conn->query("SELECT count(id) AS id FROM gallery WHERE month = '$month' && year = '$year'");
   $custCount = $result1->fetchAll();
   $total = $custCount[0]['id'];
 
@@ -154,16 +154,7 @@
         <form method="POST">
           <div class="form-row">
             <div class="col-xs-1"></div>
-            <div class="col-xs-3" style="padding-right: 2px;">
-              <select id="day" name="day" class="form-control-sm form-control">
-                <option>Day</option>
-                  <?php
-                      for ($i=1; $i <=31; ++$i) { 
-                          echo '<option value="'.$i.'">' . $i . '</option>';
-                      }
-                  ?>
-              </select>
-            </div>
+            
             <div class="col-xs-3" style="padding-right: 2px; padding-left: 2px;">
               <select id="month" name="month" class="form-control-sm form-control">
                 <option>Month </option>

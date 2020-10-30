@@ -10,19 +10,9 @@ if (isset($_POST['download']) && isset($_POST['downLoadNow']) && !empty($_POST['
 
     $filepath = 'books/' . $book_Title.'.'.$book_Format;
 
-    // $sqlRefCheck = "
-    //                     SELECT refCodeStatus FROM transactions WHERE purpose = 
-    //                 ";
-
 
     if (file_exists($filepath))
     {
-        // header('Cache-Control: public');
-        // header('Content-Description: File Transfer');
-        // header('Content-Disposition: attachment; filename=' . basename($filepath));
-        // header('Content-Type: application/octet');
-        // header('Content-Transfer-Encoding: binary');
-
         header('Content-Description: File Transfer');
         header('Content-Type: application/octet-stream');
         header('Content-Transfer-Encoding: binary');
@@ -34,6 +24,8 @@ if (isset($_POST['download']) && isset($_POST['downLoadNow']) && !empty($_POST['
         $updateQuery = "UPDATE transactions SET transc_status='completed' WHERE purpose = 'books' && purpose_id = '$book_Id' && reference = '$refCode'";
         if($conn->query($updateQuery) && $conn->query($updateQuery)->rowCount >=0)
         {
+            $downloadCounter = $conn->query("INSERT INTO downloads (item, item_id) VALUES('books', '$book_Id')");
+
             unset($_SESSION['shoppingCart']);
             unset($refCode);
 

@@ -485,3 +485,11 @@ pk_test_e1de14e19e0aee0cd1169fbe1a5d52de0c3d633a
   >
   </script>
 </form>
+
+
+$query = "SELECT * 
+          FROM books
+          WHERE title LIKE CONCAT( '%', :title, '%')";
+...
+...
+statement->bindValue(':title', $title, PDO::PARAM_STR);

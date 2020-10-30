@@ -139,6 +139,48 @@ else
   }
     
   $Next = nextArrow();
+
+
+if (isset($_GET['audioMessage']) && isset($_GET['audioFormat']))
+{
+    $sanitizer = filter_var_array($_GET, FILTER_SANITIZE_STRING);
+
+    $audio = $sanitizer['audioMessage'];
+    $format = $sanitizer['audioFormat'];
+    $messageId = $sanitizer['messageId'];
+
+
+    $stmt = $conn->prepare("INSERT INTO downloads (item, item_id) VALUES(:item, :item_id)");
+    $stmt->bindValue(':item', $audio);
+    $stmt->bindValue(':item_id', $messageId);
+
+    if($stmt->execute())
+    {
+        $filepath = 'audio_messages/' . $audio.'.'.$format;
+
+
+        if (file_exists($filepath))
+        {
+            header('Content-Description: File Transfer');
+            header('Content-Type: application/octet-stream');
+            header('Content-Transfer-Encoding: binary');
+            header('Content-Disposition: attachment; filename='.basename($filepath));
+            header('Pragma: public');
+
+            readfile($filepath);
+        }
+        else
+        {
+            $alertMessage =     '<div class="alert alert-danger alert-dismissable mt-2" style="margin-right: 10%; margin-top: 10px; margin-bottom: 0px; margin-left: 10%;">'.
+                                '<button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>'.
+                                '<div class="">'.
+                                    '<h6><i class="fa fa-check"></i>&nbsp;&nbsp;&nbsp; Sorry the message has been removed</h6>'.
+                                '</div>'.
+                            '</div>';
+        }
+    }
+}
+
 ?>
 
 <style>
@@ -193,6 +235,14 @@ else
 
 <div class="container">
     <div class="row" style="margin-x: auto;">
+
+    <?php
+
+        $alertMessage = "";
+
+        echo $alertMessage;
+
+    ?>
         <div class="col-md-6 col-xs-12 text-center" style="margin-bottom: 0px;">
             <nav aria-label="Page navigation" style="margin-bottom: 0px;">
                 <ul class="pagination" style="margin-bottom: 0px;">
@@ -242,7 +292,7 @@ else
 <!--OUR GALLERY-->
 <div class="container has-margin-bottom">
   <div class="row">
-  <?php foreach($audios as $audios) :  ?>
+    <?php foreach($audios as $audios) :  ?>
         <div class="col-xs-12 col-md-3 mt-1 mb-3" id="<?= $audios['id']; ?>">
             <div class="row">
                 <div class="col-xs-12" style="height: 150px; width: 100%; margin-x: auto;">
@@ -256,7 +306,7 @@ else
                 <div class="col-xs-12 card-footer" style="width: 100%;">
                     <div class="row">
                         <div class="col-md-12">
-                            <h6 class="text-info"><?= $audios['title']; ?></h6>
+                            <h6 class="text-info"><?= $audios['title']; ?> <span class="text-right"><a href="audio-gallery.php?messageId=<?= $audios['id']; ?>&audioMessage=<?= $audios['title']; ?>&audioFormat=<?= $audios['ext2']; ?>">&nbsp; &nbsp;<i class="fa fa-download"></i></a></span></h6>
                             <p><?= $audios['day']."/".$audios['month']."/".$audios['year']; ?></p>
                         </div>
                         <div class="col-md-12">

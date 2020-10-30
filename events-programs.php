@@ -6,6 +6,10 @@
 
   $conn = get_DB();
 
+  
+  $sanitizer1 = filter_var_array($_POST, FILTER_SANITIZE_STRING);
+  $sanitizer2 = filter_var_array($_GET, FILTER_SANITIZE_STRING);
+
   function truncate($string)
   {
     // strip tags to avoid breaking any html
@@ -25,9 +29,9 @@
   function get_month()
   {
     if (isset($_POST['month']) && $_POST['month'] !== "") {
-        return $_POST['month'];
+        return $sanitizer1['month'];
     }elseif(isset($_GET['month']) && $_GET['month'] !== ""){
-        return $_GET['month'];
+        return $sanitizer2['month'];
     }
     else{ return date("F");}
   }
@@ -64,10 +68,12 @@
   $page = page();
 
   $start = ($page - 1) * $limit;
-  $result = $conn->query("SELECT * FROM event WHERE event_from LIKE '%$month%$year' ORDER BY event_id DESC LIMIT $start, $limit");
+  $result = $conn->prepare("SELECT * FROM event WHERE event_from LIKE '%$month%$year%' ORDER BY event_id DESC LIMIT $start, $limit");
+  $result->execute();
   $events = $result->fetchAll();
 
-  $result1 = $conn->query("SELECT count(event_id) AS id FROM event WHERE event_from LIKE '%$month%$year'");
+  $result1 = $conn->prepare("SELECT count(event_id) AS id FROM event WHERE event_from LIKE '%$month%$year'");
+  $result1->execute();
   $custCount = $result1->fetchAll();
   $total = $custCount[0]['id'];
 
@@ -75,7 +81,7 @@
   {
       global $pages;
       if(isset($_GET['pages']) && $pages === null){
-          return $_GET['pages'];
+          return $sanitizer2['pages'];
       }elseif ($pages){
           return $pages;
       }else{
