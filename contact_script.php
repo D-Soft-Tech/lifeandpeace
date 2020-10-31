@@ -3,7 +3,7 @@ $name  = $_REQUEST["name"];
 $email = $_REQUEST["email"];
 $mobile   = $_REQUEST["mobile"];
 $msg   = $_REQUEST["msg"];
-$to    = "surjithctly@gmail.com"; /* <= Change this Email ID to yours */
+$to    = "oloyedeadebayoolawale@gmail.com"; /* <= Change this Email ID to yours */
 if (isset($email) && isset($name) && isset($msg)) {
     $subject = "$name sent you a message via Catholic"; /* <= Change the Subject If you want */
 		$headers = "MIME-Version: 1.0" . "\r\n";
