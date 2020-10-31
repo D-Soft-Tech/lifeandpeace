@@ -7,18 +7,43 @@
   {
     // strip tags to avoid breaking any html
     $string = strip_tags($string);
-    if (strlen($string) > 50) {
+    if (strlen($string) > 100)
+    {
 
         // truncate string
-        $stringCut = substr($string, 0, 50);
+        $stringCut = substr($string, 0, 500);
         $endPoint = strrpos($stringCut, ' ');
 
         //if the string doesn't contain any space then it will cut without word basis.
-        $string = $endPoint? substr($stringCut, 0, $endPoint) : substr($stringCut, 0);
+        $string = $endPoint ? substr($stringCut, 0, $endPoint) : substr($stringCut, 0);
     }
     return $string;
   }
+  
 ?>
+
+<style type="text/css">
+    
+    .overlay_audio{
+    display: block;
+    opacity: 0;
+    position: absolute;
+    top: 55%;
+    }
+    
+    #book-top:hover .overlay_audio{
+        opacity: 1;
+        transition: 2s ease;
+    }
+
+    .overlay_audio2{
+    display: block;
+    opacity: 1;
+    position: absolute;
+    top: 55%;
+    }
+</style>
+
 <!-- BANNER SLIDER
     ================================================== -->
 <div id="myCarousel" class="carousel slide" data-ride="carousel"> 
@@ -88,14 +113,19 @@
         <div class="col-xs-12 col-md-4 has-margin-bottom"> 
           <div class="row">
             <div class="col-xs-12">
-              <img class="img-fulid img-responsive" src="<?php echo 'images/video/'.$messages['title'].'.'.$messages['ext']; ?>" style="height: 100%; width: 100%;"alt="church">
+              <div class="text-center" id="book-top">
+                <img class="img-fulid img-responsive" src="<?php echo 'images/audio/'.$messages['title'].'.'.$messages['ext']; ?>" style="height: 100%; width: 100%;"alt="church">
+                <audio class="overlay_audio" controls style="height: 30px;">
+                    <source src="audio_messages/<?= $messages['title']; ?>.<?= $messages['ext2']; ?>" type="audio/<?= $messages['ext2']; ?>">
+                </audio>
+              </div>
             </div>
           </div>
           <div class="row">
             <div class="col-xs-12">
               <h5><?= $messages['title']; ?></h5>
               <p class="text-justify"><?php echo $messages['details']; ?></p>
-              <p><a href="about.php" role="button">View details →</a></p>
+              <p><a href="audio-gallery.php" role="button">download all Sermons →</a></p>
             </div>
           </div>
         </div>
@@ -153,33 +183,7 @@
       <div class="section-title left-align-desktop">
         <h4> LATEST BULLETIN </h4>
       </div>
-      
-      <!-- This Blog list below will later be replaced by the commented php codes below -->
-      <!--Blog list-->
-      
-      <!-- <div class="row has-margin-bottom">
-        <div class="col-md-4 col-sm-4"> <img class="img-responsive center-block" src="images/blog-thumb-1.jpg" alt="bulletin blog"> </div>
-        <div class="col-md-8 col-sm-8 bulletin">
-          <h4 class="media-heading">Perseverance of the Saints </h4>
-          <p>on 17th June 2014 by <a href="#" class="link-reverse">Vincent John</a></p>
-          <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla convallis egestas rhoncus. Donec facilisis fermentum sem, ac viverra ante luctus vel. Donec vel mauris quam. Lorem ipsum dolor sit amet...</p>
-          <a class="btn btn-primary" href="blog-single.php" role="button">Read Article →</a> </div>
-      </div>
-      
-      Blog list-
-      
-      <div class="row">
-        <div class="col-md-4 col-sm-4"> <img class="img-responsive center-block" src="images/blog-thumb-2.jpg" alt="bulletin blog"> </div>
-        <div class="col-md-8 col-sm-8 bulletin">
-          <h4 class="media-heading">Lord is Sufficient for all of our needs </h4>
-          <p>on 17th June 2014 by <a href="#" class="link-reverse">Jose Mathew</a></p>
-          <p class="media-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla convallis egestas rhoncus. Donec facilisis fermentum sem, ac viverra ante luctus vel. Donec vel mauris quam. Lorem ipsum dolor sit amet...</p>
-          <a class="btn btn-primary" href="blog-single.php" role="button">Read Article →</a> 
-        </div>
-      </div> -->
-    
 
-    <!-- The commented php block below will later replace the onces above -->
     <?php 
         $article  = $call->articles();
 
@@ -187,12 +191,18 @@
         {
       ?>
       <div class="row has-margin-xs-bottom">
-        <div class="col-md-4 col-sm-4"> <img class="img-responsive center-block" src="<?php echo 'images/article/'.$articles['id'].'.jpg'; ?>" style="max-height: 177px; max-width: 265px;" alt="bulletin blog"> 
-        </div>
+        <div class="col-md-4">
+          <div class="highlight-bg has-padding-xs event-details">
+            <div class="ed-title">DETAILS</div>
+            <div class="ed-content"> <span class="glyphicon glyphicon-calendar">
+              </span> <?= $articles['date_added']; ?> <br>
+              <span class="glyphicon glyphicon-user"></span> <?= $articles['article_author']; ?> <br>
+            </div>
+          </div>
+        </div> 
         <div class="col-md-8 col-sm-8 bulletin">
           <h4 class="media-heading"><?= $articles['article_title']; ?> </h4>
-          <p><?= $articles['date_added']; ?> <a href="#" class="link-reverse"><?= truncate($articles['article_author']); ?></a></p>
-          <p> <?= $articles['article_details']; ?></p>
+          <p class="text-justify"> <?= truncate($articles['article_details']); ?></p>
           <a class="btn btn-primary" href="blog-single.php" role="button">Read Article →</a> 
         </div>
       </div>
@@ -233,26 +243,62 @@
   <div class="section-title">
     <h4>CHARITY </h4>
   </div>
+  <?php 
+        $donation  = $call->donation();
+
+        $donation = $donation->fetch(PDO::FETCH_ASSOC);
+
+        
+        $donation_id = $donation['id'];
+
+        $sql_transc =   "
+                            SELECT sum(amount) AS amount FROM transactions, donation WHERE purpose = 'donation' && purpose_id = '$donation_id' && donation.status = 'on_going' && donation.id = transactions.purpose_id
+                        ";
+
+        $pldg_amount = $call->conn->query($sql_transc);
+
+        $pledged = $pldg_amount->fetchColumn();
+        
+        $prg_percent = ceil(abs($pledged/$donation['target_amount']) * 100);
+      ?>
   <div class="charity-box">
-    <div class="charity-image"> <img src="images/charity-donation.jpg" class="img-responsive" alt="charity donation fundraising"></div>
+    <div class="charity-image"> <img src="images/donation/<?= $donation['title']; ?>.<?= $donation['ext']; ?>" class="img-responsive" alt="Donation"></div>
     <div class="charity-desc">
-      <h4>Empowerment for Unemployed Women at Masopa Village</h4>
-      <p> Posted by <a class="link-reverse" href="#">Steven</a> on Aug 11 2014</p>
-      <h3 class="pledged-amount">#350,000.00</h3>
-      <p>Pledged of #650,000.00 goal</p>
+      <h4><?= $donation['title']; ?></h4>
+      <p> Posted on <a class="link-reverse"><?= $donation['date_posted']; ?></a> 
+      &nbsp; &nbsp; Proposed Date: <a class="link-reverse"><?= $donation['target_date']; ?></a></p>
+      
+      <h3 class="pledged-amount"># <?= number_format($pledged); ?></h3>
+      <p>Pledged out of  # <?= number_format($donation['target_amount']); ?> goal</p>
       <div class="progress">
-        <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%"><span class="sr-only">60% Complete</span>60%</div>
+        <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="<?= $prg_percent; ?>" aria-valuemin="0" aria-valuemax="100" style="width: <?= $prg_percent; ?>%"><span class="sr-only"><?= $prg_percent; ?>% Complete</span><?= $prg_percent; ?>%</div>
       </div>
-      <div class="pull-left has-margin-xs-right">
-        <h3>24</h3>
-        <p>Backers</p>
-      </div>
+      <?php
+        $propose_date = $donation['target_date'];
+
+        $proposed_date = strtotime($propose_date);
+        $currentDate = date('F jS, Y');
+        $currentTime = strtotime($currentDate);
+
+        if($currentTime < $proposed_date)
+        {
+          $daysLeft = ceil(abs($proposed_date - $currentTime)/86400);
+        }
+        elseif($proposed_date === $currentTime)
+        {
+          $daysLeft = '0';
+        }
+        else
+        {
+          $daysLeft = "Target date already passed";
+        }
+      ?>
       <div class="pull-left">
-        <h3 class="pledged-amount">17</h3>
-        <p>Days left</p>
+        <h3 class="pledged-amount"><?= $daysLeft; ?></h3>
+        <p><strong> Days left</strong></p>
         <p class="text-center link-reverse" style="font-size: 1.6rem;">Give Cheerfully, For God loves a cheerful giver</p>
       </div>
-      <div class="donate-now"> <a href="charity-donation.php" class="btn btn-lg btn-primary">Donate Now →</a> </div>
+      <div class="donate-now"> <a href="charity-donation.php?searchDonationById=<?= $donation_id; ?>" class="btn btn-lg btn-primary">Donate Now →</a> </div>
     </div>
   </div>
 </div>

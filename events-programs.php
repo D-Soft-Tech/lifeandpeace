@@ -29,7 +29,7 @@
   function get_month()
   {
     if (isset($_POST['month']) && $_POST['month'] !== "") {
-        return $sanitizer1['month'];
+        return $_POST['month'];
     }elseif(isset($_GET['month']) && $_GET['month'] !== ""){
         return $sanitizer2['month'];
     }
@@ -68,7 +68,7 @@
   $page = page();
 
   $start = ($page - 1) * $limit;
-  $result = $conn->prepare("SELECT * FROM event WHERE event_from LIKE '%$month%$year%' ORDER BY event_id DESC LIMIT $start, $limit");
+  $result = $conn->prepare("SELECT * FROM event WHERE event_from LIKE '%$month%$year' ORDER BY event_id DESC LIMIT $start, $limit");
   $result->execute();
   $events = $result->fetchAll();
 

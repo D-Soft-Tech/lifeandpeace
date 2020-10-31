@@ -350,6 +350,12 @@ username: b39783f939332b
 
 password: 021533dc36bd794
 
+$host = "us-cdbr-east-02.cleardb.com";
+$user = "b39783f939332b";
+$password = "021533dc36bd794";
+$db_name = "heroku_be5ce62eb396741";
+
+
 port: this is always 3306
 
 mysql -hus-cdbr-east-02.cleardb.com -ub39783f939332b -p heroku_be5ce62eb396741 < C:\Users\Dell\Desktop\newSql.sql

@@ -2,10 +2,10 @@
 
     function get_DB()
     {
-        $host = "localhost";
-        $user = "d-SoftTech";
-        $password = "oloyede0828";
-        $db_name = "life_and_peace";
+        $host = "us-cdbr-east-02.cleardb.com";
+        $user = "b39783f939332b";
+        $password = "021533dc36bd794";
+        $db_name = "heroku_be5ce62eb396741";
 
         $dsn = "mysql:host=$host;dbname=$db_name";
 

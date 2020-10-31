@@ -1,5 +1,4 @@
 <?php
-    include_once 'db.php';
 
     class most_recent_event{
 
@@ -55,7 +54,7 @@
         public function call_sermon()
         {
             $sql = "
-                        SELECT id, title, ext, sermon_by, details FROM message ORDER BY id DESC LIMIT 3
+                        SELECT id, title, ext, ext2, sermon_by, details FROM message WHERE type = 'audio' ORDER BY id DESC LIMIT 3
                     ";
         
             $featured_sermon = $this->conn->query($sql);
@@ -96,7 +95,7 @@
         public function donation()
         {
             $sql = "
-                        SELECT donation_title, donation_target, pledged, date_posted, target_date FROM donation ORDER BY donation_id DESC LIMIT 1 WHERE status = on_going
+                        SELECT * FROM donation WHERE status = 'on_going' ORDER BY id DESC LIMIT 1
                     ";
             
             $donation = $this->conn->query($sql);
@@ -122,6 +121,10 @@
             return $quotes;
         }
 
+        public function db_conn()
+        {
+            return $this->conn;
+        }
         
     }
 

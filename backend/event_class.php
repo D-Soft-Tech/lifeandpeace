@@ -9,11 +9,11 @@
         $theme,
         $anchor,
         $details,
-        $day,
-        $time,
+        $event_from,
+        $event_to,
         $event_time;
 
-        public function __construct($image_name, $image_ext, $path, $theme, $anchor, $details, $day, $time, $event_time)
+        public function __construct($image_name, $image_ext, $path, $theme, $anchor, $details, $event_from, $event_to, $event_time)
         {
             $this->image_name = $image_name;
             $this->image_ext = $image_ext;
@@ -21,8 +21,8 @@
             $this->theme = $theme;
             $this->anchor = $anchor;
             $this->details = $details;
-            $this->day = $day;
-            $this->time = $time;
+            $this->event_from = $event_from;
+            $this->event_to = $event_to;
             $this->event_time = $event_time;
         }
 
@@ -56,16 +56,13 @@
                 if($this->details ===""){
                     $error[] = "You did not supply the details of the event";
                 }
-                if($this->time ===""){
-                    $this->time = " ";
-                }
                 if($this->event_time ===""){
                     $this->event_time = " ";
                 }
                 if($this->theme ===""){
                     $error[] = "You did not supply the theme of the event";
                 }
-                if($this->day ===""){
+                if($this->event_from ===""){
                     $error[] = "You did not supply the starting date of the event";
                 }
     
@@ -78,8 +75,8 @@
                             theme,
                             anchor,
                             details,
-                            day,
-                            time,
+                            event_from,
+                            event_to,
                             event_time
                         )
                         VALUES
@@ -88,8 +85,8 @@
                             :theme,
                             :anchor,
                             :details,
-                            :day,
-                            :time,
+                            :event_from,
+                            :event_to,
                             :event_time
                         )";
                     global $conn;
@@ -98,8 +95,8 @@
                     $stmt->bindValue(':theme', $this->theme);
                     $stmt->bindValue(':anchor', $this->anchor);
                     $stmt->bindValue(':details', $this->details);
-                    $stmt->bindValue(':day', $this->day);
-                    $stmt->bindValue(':time', $this->time);
+                    $stmt->bindValue(':event_from', $this->event_from);
+                    $stmt->bindValue(':event_to', $this->event_to);
                     $stmt->bindValue(':event_time', $this->event_time);
                     $result = $stmt->execute();
                     

@@ -24,7 +24,7 @@
             $splitted = explode(".", $name);
             $ext = end($splitted);
 
-            $path = "../images/event/".$theme.".".$ext;
+            $path = "../images/event/weeklyProgram/".$theme.".".$ext;
 
             $weeklyProgram = new weeklyProgram($name, $ext, $path, $theme, $anchor, $phone, $details, $day, $time);
             $weeklyProgram->Upload();
@@ -53,7 +53,7 @@
             $splitted = explode(".", $name);
             $ext = end($splitted);
 
-            $path = "../images/event/weeklyProgram".$theme.".".$ext;
+            $path = "../images/event/".$theme.".".$ext;
 
             $passport_obj = new Passport($name, $ext, $path, $theme, $anchor, $details, $event_from, $event_to, $event_time);
             $passport_obj->Upload();
