@@ -38,7 +38,7 @@
                             </label>
                             <textarea type="text" id="exampleText" class="form-control fr-view" name="details"></textarea>
                         </div>
-                        <button type="submit" name="submit" value="submit" class="mt-1 btn btn-primary btn-block">
+                        <button type="submit" name="submitResponseMessage" value="submit" class="mt-1 btn btn-primary btn-block">
                             Send Response
                         </button>
                     </form>

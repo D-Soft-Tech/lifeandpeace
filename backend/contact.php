@@ -455,7 +455,7 @@
                                                     <div class="col-sm-2"></div>
                                                 </div>
                                                 <?php
-                                                    if(isset($_POST["submit"]))
+                                                    if(isset($_POST["submitResponseMessage"]))
                                                     {
                                                 ?>
 
@@ -491,7 +491,7 @@
                                                             // Message lines should not exceed 70 characters (PHP rule), so wrap it
                                                             $message = wordwrap($message, 70);
                                                             // Send Mail By PHP Mail Function
-                                                                if(mail("marc.murray.92@gmail.com", $subject, $message, $headers)){
+                                                                if(mail("oloyedeadebayoolawale@gmail.com", $subject, $message, $headers)){
                                                                     $result = '<div class="alert alert-success alert-dismissable" id="flash-msg">
                                                                                     <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
                                                                                     <h4><i class="icon fa fa-pe-7s-check"></i> Please fill out everything! All fields are required</h4>
