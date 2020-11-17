@@ -1,8 +1,32 @@
 <?php
-  include_once 'header/header2.php';
   include_once 'life/php/db.php';
 
   $conn = get_DB();
+
+    function audio_downloads($id, $name)
+    {
+        global $conn;
+
+        $checker = $conn->prepare("SELECT item_id, item FROM downloads WHERE item_id = :id && item = :item && item != 'books'");
+        $checker->bindParam(':id', $id);
+        $checker->bindParam(':item', $name);
+        $checker->execute();
+
+        if($checker->rowCount() > 0)
+        {
+        $audioDownloadCount = "SELECT item, COUNT(*) AS num FROM `downloads` WHERE item != 'books' && item_id = $id GROUP BY item";
+        $audioDownloadCount = $conn->query($audioDownloadCount);
+        $audioDownloadCount = $audioDownloadCount->fetch();
+
+        return $audioDownloadCount['num'];
+        }
+        else
+        {
+        return 0;
+        }
+
+    }
+
 
   function truncate($string)
   {
@@ -19,6 +43,16 @@
     }
     return $string;
   }
+
+  $sql = "
+              SELECT radio FROM live_program WHERE id = 1
+          ";
+
+  $result = $conn->prepare($sql);
+  $result->execute();
+  $live = $result->fetch();
+
+  $live = $live['radio'];
 
   $limit = 10;
   $page = 1;
@@ -38,108 +72,109 @@
   $page = page();
 
   if((isset($_POST['submitSearchByRef']) && isset($_POST['searchInput']) && !empty($_POST['searchInput'])) && $_POST['searchInput'] !== 'nothingnothing' OR (isset($_GET['searchInput']) && !empty($_GET['searchInput']) && $_GET['searchInput'] !== 'nothingnothing'))
-{   
-    function getInput(){
-        if(isset($_POST['searchInput']))
+    {   
+        function getInput()
         {
-            return $_POST['searchInput'];
+            if(isset($_POST['searchInput']))
+            {
+                return $_POST['searchInput'];
+            }
+            elseif(isset($_GET['searchInput']))
+            {
+                return $_GET['searchInput'];
+            }
         }
-        elseif(isset($_GET['searchInput'])){
-            return $_GET['searchInput'];
-        }
+
+        $input = getInput();
+
+        $start = ($page - 1) * $limit;
+        $sql = "
+                    SELECT * FROM message WHERE (sermon_by LIKE '%$input%'
+                    OR title LIKE '%$input%' OR details LIKE '%$input%'
+                    OR day LIKE '%$input' OR month LIKE '%$input' OR year LIKE '%$input') && type = 'audio' ORDER BY id LIMIT $start, $limit
+                ";
+
+        $result = $conn->prepare($sql);
+        $checker = $result->execute();
+        $audios = $result->fetchAll();
+
+        $result1 = $conn->prepare("
+                                    SELECT count(id) AS id FROM message WHERE (sermon_by LIKE '%$input%'
+                                    OR title LIKE '%$input%' OR details LIKE '%$input%'
+                                    OR day LIKE '%$input' OR month LIKE '%$input' OR year LIKE '%$input') && type = 'audio'
+                                ");
+                                
+        $check = $result1->execute();
+
+        $custCount = $result1->fetchAll();
+        $total = $custCount[0]['id'];
+    }
+    else
+    {   
+        $input = 'nothingnothing';
+        $start = ($page - 1) * $limit;
+        $sql = "
+                    SELECT * FROM message WHERE type = 'audio' ORDER BY id LIMIT $start, $limit
+                ";
+
+        $result = $conn->query($sql);
+        $audios = $result->fetchAll();
+
+        $result1 = $conn->prepare("
+                                    SELECT count(id) AS id FROM message WHERE type = 'audio'
+                                ");
+                                
+        $check = $result1->execute();
+
+        $custCount = $result1->fetchAll();
+        $total = $custCount[0]['id'];
     }
 
-    $input = getInput();
-
-    $start = ($page - 1) * $limit;
-    $sql = "
-                SELECT * FROM message WHERE (sermon_by LIKE '%$input%'
-                OR title LIKE '%$input%' OR details LIKE '%$input%'
-                OR day LIKE '%$input' OR month LIKE '%$input' OR year LIKE '%$input') && type = 'audio' ORDER BY id LIMIT $start, $limit
-            ";
-
-    $result = $conn->prepare($sql);
-    $checker = $result->execute();
-    $audios = $result->fetchAll();
-
-    $result1 = $conn->prepare("
-                                SELECT count(id) AS id FROM message WHERE (sermon_by LIKE '%$input%'
-                                OR title LIKE '%$input%' OR details LIKE '%$input%'
-                                OR day LIKE '%$input' OR month LIKE '%$input' OR year LIKE '%$input') && type = 'audio'
-                            ");
-                            
-    $check = $result1->execute();
-
-    $custCount = $result1->fetchAll();
-    $total = $custCount[0]['id'];
-}
-else
-{   
-    $input = 'nothingnothing';
-    $start = ($page - 1) * $limit;
-    $sql = "
-                SELECT * FROM message WHERE type = 'audio' ORDER BY id LIMIT $start, $limit
-            ";
-
-    $result = $conn->query($sql);
-    $audios = $result->fetchAll();
-
-    $result1 = $conn->prepare("
-                                SELECT count(id) AS id FROM message WHERE type = 'audio'
-                            ");
-                            
-    $check = $result1->execute();
-
-    $custCount = $result1->fetchAll();
-    $total = $custCount[0]['id'];
+function pages()
+{
+    global $pages;
+    if(isset($_GET['pages']) && $pages === null){
+        return $_GET['pages'];
+    }elseif ($pages){
+        return $pages;
+    }else{
+        return 5;
+    }
 }
 
-  function pages()
-  {
-      global $pages;
-      if(isset($_GET['pages']) && $pages === null){
-          return $_GET['pages'];
-      }elseif ($pages){
-          return $pages;
-      }else{
-          return 5;
-      }
-  }
+$pages = pages();
 
-  $pages = pages();
+function previous()
+{
+    global $pages;
+    if($pages <=5){
+        return 5;
+    }else{
+        return $pages - 5;
+    }
+}
+$Previous = previous();
 
-  function previous()
-  {
-      global $pages;
-      if($pages <=5){
-          return 5;
-      }else{
-          return $pages - 5;
-      }
-  }
-  $Previous = previous();
+function nextArrow()
+{
+    global $pages, $total, $limit;
+    $rem = ceil($total % $limit);
+    $div = ceil($total / $limit);
 
-  function nextArrow()
-  {
-      global $pages, $total, $limit;
-      $rem = ceil($total % $limit);
-      $div = ceil($total / $limit);
-
-      if($pages >= $div){
-          if($rem>0){
-              return $div + 4;
-          }elseif($rem = 0){
-              return $div;
-          }
-      }
-      else
-      {
-          return $pages + 5;
-          }
-  }
+    if($pages >= $div){
+        if($rem>0){
+            return $div + 4;
+        }elseif($rem = 0){
+            return $div;
+        }
+    }
+    else
+    {
+        return $pages + 5;
+        }
+}
     
-  $Next = nextArrow();
-
+$Next = nextArrow();
 
 if (isset($_GET['audioMessage']) && isset($_GET['audioFormat']))
 {
@@ -153,14 +188,14 @@ if (isset($_GET['audioMessage']) && isset($_GET['audioFormat']))
     $stmt = $conn->prepare("INSERT INTO downloads (item, item_id) VALUES(:item, :item_id)");
     $stmt->bindValue(':item', $audio);
     $stmt->bindValue(':item_id', $messageId);
-
+    
     if($stmt->execute())
     {
         $filepath = 'audio_messages/' . $audio.'.'.$format;
 
 
         if (file_exists($filepath))
-        {
+        {   
             header('Content-Description: File Transfer');
             header('Content-Type: application/octet-stream');
             header('Content-Transfer-Encoding: binary');
@@ -181,6 +216,7 @@ if (isset($_GET['audioMessage']) && isset($_GET['audioFormat']))
     }
 }
 
+include_once 'header/header2.php';
 ?>
 
 <style>
@@ -203,25 +239,49 @@ if (isset($_GET['audioMessage']) && isset($_GET['audioFormat']))
     position: absolute;
     top: 55%;
     }
+
+    #topbar
+    {
+        background-image: url('images/audio3.jpg');
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
 </style>
 
 <!--SUBPAGE HEAD-->
 
-<div class="subpage-head" style="margin-bottom: 10px;">
+<div class="subpage-head" style="margin-bottom: 10px;" id="topbar">
   <div class="container">
     <div class="row">
-        <div class="col-md-8 col-xs-12">
-            <h3>Audio Gallery</h3>
+        <div class="col-md-8 col-xs-12" style="color: #fff; font-weight: bold;">
+            <h3><span style="color: #fff;">Audio Gallery</span></h3>
             <p class="lead">A collection of our church Audio Messages</p>
         </div>
         <div class="main-card card col-md-4 col-xs-12">
             <div class="card-body">
                 <div class="collapse" id="collapseExample123">
-                    
-                    <audio class="overlay_audio2" controls style="height: 50px;">
-                        <source src="audio_messages/grace.mp3" type="audio/mp3">
-                    </audio>
-                    <img class="img-resoponsive" src="images/audio/grace.jpg" style="height: 150px; width: 100%;" />
+                    <?php
+                        if($live > null && !empty($live))
+                        {
+                        ?>
+
+                            <audio class="overlay_audio2" controls style="height: 50px;">
+                                <!-- change the value of the src attribute of the source tag below to $link latter -->
+                                <source src="audio_messages/grace.mp3" type="audio/mp3">
+                            </audio>
+                            <img class="img-resoponsive" src="images/onair2.jpg" style="height: 150px; width: 100%;" />
+                        
+                        <?php
+                        }
+                        else{
+                        ?>
+
+                            <img class="img-resoponsive" src="images/Off-Air-3.jpg" style="height: 150px; width: 100%;" />
+                        
+                        <?php
+                        }
+                    ?>
                 </div>
             </div>
             <div class="card-footer">
@@ -299,7 +359,7 @@ if (isset($_GET['audioMessage']) && isset($_GET['audioFormat']))
                     <div class="text-center" id="book-top">
                         <img class="img-resoponsive" src="images/audio/<?= $audios['title']; ?>.<?= $audios['ext']; ?>" alt="<?= $audios['title']; ?>" style="height: 150px; width: 100%;" />
                         <audio class="overlay_audio" controls style="height: 30px;">
-                            <source src="audio_messages/<?= $audios['title']; ?>.<?= $audios['ext2']; ?>" type="audio/<?= $audios['ext2']; ?>">
+                            <source src="audio_messages/<?= $audios['title']; ?>.<?= $audios['ext2']; ?>">
                         </audio>
                     </div>
                 </div>
@@ -310,7 +370,7 @@ if (isset($_GET['audioMessage']) && isset($_GET['audioFormat']))
                             <p><?= $audios['day']."/".$audios['month']."/".$audios['year']; ?></p>
                         </div>
                         <div class="col-md-12">
-                            <h6 class="">Downloads: <span class="text-success">120</span></h6>
+                            <h6 class="">Downloads: <span class="text-success"><?= number_format(audio_downloads($audios['id'], $audios['title'])); ?></span></h6>
                         </div>
                     </div>
                 </div>

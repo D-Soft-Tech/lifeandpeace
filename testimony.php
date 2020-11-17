@@ -102,7 +102,7 @@
   $month = get_month();
   $year = get_year();
 
-  $limit = 5;
+  $limit = 2;
   $page = 1;
 
   function page()
@@ -176,11 +176,35 @@
 ?>
 
 <!--SUBPAGE HEAD-->
+<style>
+  #topbar
+  {
+    background-image: url('images/testimony.png');
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-blend-mode: inherit;
+  }
+  #shadow1{
+    text-shadow:
+      3px 3px 0 #000,  
+      3px 3px 0 #000,
+      3px 3px 0 #000,
+      3px 3px 0 #000;
+  }
+  #shadow2{
+    text-shadow:
+      1px 1px 0 #000,  
+      1px 1px 0 #000,
+      1px 1px 0 #000,
+      1px 1px 0 #000;
+  }
+</style>
 
-<div class="subpage-head">
-  <div class="container">
-    <h3>Testimonies</h3>
-    <p class="lead">For He is good and His mercies endureth forever</p>
+<div class="subpage-head" id="topbar">
+  <div class="container" style="color: #fff; font-weight: bold;">
+    <h3><span style="color: #fff; font-size: 1.2em;" id="shadow1">Testimonies</span></h3>
+    <p class="lead" style="font-size: 1.6em;" id="shadow2">For He is good and His mercies endureth forever</p>
   </div>
 </div>
 

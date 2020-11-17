@@ -38,7 +38,7 @@
             $error = array();
             $image_format = array('jpeg','jpg','png');
 
-            $mp3_format = array('mp3','wav','ogg');
+            $mp3_format = array('mp3');
 
             if ($_FILES['audioPicture'] && $_FILES['audioFile']) 
             {
@@ -52,6 +52,7 @@
                 $temp_name2 = $audioMP3['tmp_name'];
                 $image_type2 = strtolower($audioMP3['type']);
                 $audio_size = $audioMP3['size'];
+                
                 //End of variable setting
 
 
@@ -60,15 +61,15 @@
                 }
 
                 if (in_array($this->ext2, $mp3_format)===false) {
-                    $error[] = "The audio format, $this->ext2, is not allowed <br> The permitted audio formats are: mp3, wav and ogg";
+                    $error[] = "The audio format, $this->ext2, is not allowed <br> The permitted audio format is: mp3";
                 }
     
                 if ($image_size > 20971520) {
                     $error[] = "The image size is too large, please upload an image of 10mb or less";
                 }
 
-                if ($audio_size > 104857600) {
-                    $error[] = "The audio size is too large, please upload find a way to compress it to 50mb or less";
+                if ($audio_size > 83886080) {
+                    $error[] = "The audio size is too large, please upload find a way to compress it to 70mb or less";
                 }
 
                 if($this->anchor ===""){

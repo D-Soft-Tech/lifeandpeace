@@ -32,13 +32,13 @@ If you having trouble in editing css, see documentation or please email me on su
 
 
 body {
-	font-family: 'Droid Serif', Arial, sans-serif;
-	background:#FFF;
+	font-family: 'Open Sans', sans-serif;
+	background:#fff;
 	font-weight:300;
 	height: 100%;
 	margin: 0;
 	padding: 0;
-	color:#857F79;
+	color: #444444;
 }
 a {
 	color:#2c2c2a;
@@ -158,13 +158,13 @@ font-size: 25px;
 	border-color: #e7ad47;
 }
 .well {
-	background:#f9f1e6;
+	background:#bdd2f6;
 	border:0;
 	-webkit-box-shadow:none;
 	box-shadow:none;
 }
 .highlight-bg {
-	background:#f9f1e6;
+	background:#F6F9FE;
 	padding: 24px 0;
 }
 .has-margin-top {
@@ -216,7 +216,7 @@ font-size: 25px;
 .has-border-bottom {
 	border-bottom:1px solid #eadeda;
 }
-.section-title {
+.section-title{
 	text-align:center;
 	color:#53504c;
 	min-height: 40px;
@@ -232,9 +232,14 @@ font-size: 25px;
 	bottom: -12px;
 	width:30px;
 	height:4px;
-	background:#919191;
+	background:#4268B3;
 	margin-left: -15px;
 }
+
+.section-title2 h4:after {
+	background:#fff;
+}
+
 .section-title.left-align {
 	text-align:left;
 }
@@ -406,7 +411,7 @@ top: 25%;
 /* Declare heights because of positioning of img element */
 .carousel .item {
 	height: 650px;
-	background-color: #e2beae;
+	background-color: #fff;
 }
 .carousel-control.left {
 	background-image:none;
@@ -418,15 +423,15 @@ top: 25%;
 	top:55%;
 }
 .slide-one {
-	background:url(../images/church-mountain-bg.jpg) no-repeat;
+	background:url(../images/background/back2.jpg) no-repeat;
 	background-size:cover;
 }
 .slide-two {
-	background:url(../images/church-man-sea.jpg) no-repeat;
+	background:url(../images/background/pasture2.jpg) no-repeat;
 	background-size:cover;
 }
 .slide-three {
-	background:url(../images/church-man-hope.jpg) no-repeat;
+	background:url(../images/background/free.jpg) no-repeat;
 	background-size:cover;
 }
 /*========== 4. UPCOMING EVENT ==============*/
@@ -789,11 +794,11 @@ a.list-group-item:hover, a.list-group-item:focus {
 
 footer {
 	background:#53504c;
-	color:#f9f1e6;
+	color:#F6F9FE;
 	padding-top:5px;
 }
 footer h5 {
-	color:#f9f1e6;
+	color:#F6F9FE;
 }
 .footer-links {
 	margin:0;
@@ -829,7 +834,7 @@ footer a:hover, footer a:focus {
 
 
 .subpage-head {
-	background-color:#f9f1e6;
+	background-color:#F6F9FE;
 	padding-top: 80px;
 	padding-bottom: 20px;
 }
@@ -925,7 +930,7 @@ background-color: #D3CFCC;
 
 .location-map {
 	height:260px;
-	background-color: #f9f1e6;
+	background-color: #F6F9FE;
 }
 .location-map iframe {
 	width:100%;
@@ -936,7 +941,7 @@ background-color: #D3CFCC;
 /*========== 18. CHARITY DONATION ==============*/
 
 .charity-box {
-	background:#f9f1e6;
+	background:#F6F9FE;
 	overflow:hidden;
 }
 

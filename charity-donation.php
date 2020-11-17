@@ -37,11 +37,34 @@
       ?>
       
       <!--SUBPAGE HEAD-->
-      
-      <div class="subpage-head" style="margin-bottom: 20px;">
+      <style>
+        #topbar
+        {
+          background-image: url('images/donations2.png');
+          background-attachment: fixed;
+          background-repeat: no-repeat;
+          background-size: cover;
+        }
+        #shadow1{
+          text-shadow:
+            2px 2px 0 #000,  
+            2px 2px 0 #000,
+            2px 2px 0 #000,
+            2px 2px 0 #000;
+        }
+        #shadow2{
+          text-shadow:
+            1px 1px 0 #fff,  
+            1px 1px 0 #fff,
+            1px 1px 0 #fff,
+            1px 1px 0 #fff;
+        }
+      </style>
+
+      <div class="subpage-head" id="topbar" style="margin-bottom: 20px;">
         <div class="container">
-          <h4><?= $donations['title']; ?></h4>
-          <h6 class="lead text-danger">Target Date:&nbsp; <?= $donations['target_date']; ?></h6>
+          <h4><span id="shadow1" style="color: #fff; font-weight: bold; font-size: 2em;"><?= $donations['title']; ?></span></h4>
+          <h6 class="lead text-danger" id="shadow2"><span style="color: red;">Target Date:&nbsp; <?= $donations['target_date']; ?></span></h6>
         </div>
       </div>
       
@@ -51,14 +74,10 @@
       <div class="container">
         <div class="row">
           <div class="col-md-8 has-margin-bottom">
-            <div class="row">
-              <div class="col-12" style="margin-right: 15px; margin-left: 15px;">
-                <article class="blog-content">
-                  <img src="images/donation/<?= $donations['title']; ?>.<?= $donations['ext']; ?>" alt="charity donation" class="img-responsive has-margin-xs-bottom" style="width: 100%;">
-                  <p class= "text-justify"><?= $donations['details']; ?></p>
-                </article>
-              </div>
-            </div>
+            <article class="blog-content">
+              <img src="images/donation/<?= $donations['title']; ?>.<?= $donations['ext']; ?>" alt="charity donation" class="img-responsive has-margin-xs-bottom" style="width: 100%;">
+              <p class= "text-justify"><?= $donations['details']; ?></p>
+            </article>
           </div>
           <!--// col md 9--> 
           
@@ -118,7 +137,7 @@
                 <div class="text-center has-margin-xs-top">
                   <script src="https://js.paystack.co/v1/inline.js"></script>
                   <input type="number" name="donateAmount" placeholder="Enter amount to donate" style="margin-bottom: 10px;" class="form-control" id="amountToDonate">
-                  <input class="btn btn-primary btn-lg" <?php disable_button(); ?>> </div>
+                  <input class="btn btn-primary btn-lg" <?php disable_button(); ?>>
                 </div>
               </div>
             </div>
@@ -147,7 +166,18 @@
                 ?>
               </ul>
             </div>
-            <div class="tag-cloud has-margin-bottom"> <a href="#">catholic</a> <a href="#">bulletin</a> <a href="#">programs</a> <a href="#">events</a> <a href="#">church</a> <a href="#">charity</a> <a href="#">website</a> <a href="#">template</a> <a href="#">non-profit</a> <a href="#">belief</a> <a href="#">ministry</a> <a href="#">sermon</a> <a href="#">nature</a> </div>
+            <div class="tag-cloud has-margin-bottom"> 
+              <a href="blog.php">bulletin</a> 
+              <a href="events-programs.php">programs</a>
+              <a href="events-programs.php">events</a> 
+              <a href="index.php">church</a>
+              <a href="charity-doantion.php">donation</a> 
+              <a href="image-gallery.php">gallery</a> 
+              <a href="#">audio messages</a>
+              <a href="#">video messages</a> 
+              <a href="about.php">about</a>
+              <a href="contact.php">contact</a> 
+            </div>
           </div>
         </div>
       </div>
@@ -166,11 +196,35 @@
           <?php
             $donationIDNum = $donations['id'];
           ?>
+          
+          <style>
+            #topbar
+            {
+              background-image: url('images/donations2.png');
+              background-attachment: fixed;
+              background-repeat: no-repeat;
+              background-size: cover;
+            }
+            #shadow1{
+              text-shadow:
+                2px 2px 0 #000,  
+                2px 2px 0 #000,
+                2px 2px 0 #000,
+                2px 2px 0 #000;
+            }
+            #shadow2{
+              text-shadow:
+                1px 1px 0 #fff,  
+                1px 1px 0 #fff,
+                1px 1px 0 #fff,
+                1px 1px 0 #fff;
+            }
+          </style>
 
-          <div class="subpage-head" style="margin-bottom: 20px;">
+          <div class="subpage-head" id="topbar" style="margin-bottom: 20px;">
             <div class="container">
-              <h4><?= $donations['title']; ?></h4>
-              <h6 class="lead text-danger">Target Date:&nbsp; <?= $donations['target_date']; ?></h6>
+              <h4><span id="shadow1" style="color: #fff; font-weight: bold; font-size: 2em;"><?= $donations['title']; ?></span></h4>
+              <h6 class="lead text-danger" id="shadow2"><span style="color: red; font-size: +1.2em;">Target Date:&nbsp; <?= $donations['target_date']; ?></span></h6>
             </div>
           </div>
           
@@ -180,14 +234,10 @@
           <div class="container">
             <div class="row">
               <div class="col-md-8 has-margin-bottom">
-                <div class="row">
-                  <div class="col-12" style="margin-right: 15px; margin-left: 15px;">
-                    <article class="blog-content">
-                      <img src="images/donation/<?= $donations['title']; ?>.<?= $donations['ext']; ?>" alt="charity donation" class="img-responsive has-margin-xs-bottom" style="width: 100%;">
-                      <p class= "text-justify"><?= $donations['details']; ?></p>
-                    </article>
-                  </div>
-                </div>
+                <article class="blog-content">
+                  <img src="images/donation/<?= $donations['title']; ?>.<?= $donations['ext']; ?>" alt="charity donation" class="img-responsive has-margin-xs-bottom" style="width: 100%;">
+                  <p class= "text-justify"><?= $donations['details']; ?></p>
+                </article>
               </div>
               <!--// col md 9--> 
               
@@ -195,63 +245,62 @@
               <div class="col-md-4"> 
                 
                 <!--Donate Box-->
-                <div class="charity-box has-margin-xs-bottom">
-                  <div class="charity-desc">
-                    <?php
-          
-                      $donation_id = $donations['id'];
-          
-                      $sql_transc = "
-                                      SELECT sum(amount) AS amount FROM donation, transactions WHERE transactions.purpose = 'donation' && transactions.purpose_id = :id  && donation.status = 'on_going'
-                                    ";
-          
-                      $pldg_amount = $conn->prepare($sql_transc);
-                      $pldg_amount->bindParam(':id', $donation_id);
-                      $pldg_amount->execute();
-          
-                      $pledged = $pldg_amount->fetchAll();
+                <div class="charity-box has-margin-xs-bottom charity-desc">
+                  <?php
+        
+                    $donation_id = $donations['id'];
+        
+                    $sql_transc = "
+                    SELECT sum(amount) AS amount FROM transactions, donation WHERE purpose = 'donation' && purpose_id = '$donation_id' && donation.status = 'on_going' && donation.id = transactions.purpose_id
+                                  ";
+        
+                    $pldg_amount = $conn->prepare($sql_transc);
+                    $pldg_amount->bindParam(':id', $donation_id);
+                    $pldg_amount->execute();
+        
+                    $pledged = $pldg_amount->fetchAll();
 
-                      $pledged= $pledged[0]['amount'];
+                    $pledged= $pledged[0]['amount'];
 
-                      $prg_percent = ceil(abs($pledged/$donations['target_amount']) * 100);
-          
-          
-                    ?>
-                    <h2 class="pledged-amount has-no-margin">#<?php echo number_format($pledged); ?></h2>
-                    <p>Pledged out of <span class="text-danger"> #<?= number_format($donations['target_amount']); ?></span> goal</p>
-                    <div class="progress">
-                      <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="<?= $prg_percent; ?>" aria-valuemin="0" aria-valuemax="100" style="width: <?= $prg_percent; ?>%"><span class="sr-only"><?= $prg_percent; ?>% Complete</span><?= $prg_percent; ?>%</div>
-                    </div>
-                    <div class="clearfix">
-                      <div>
-                        <?php
-                            $propose_date = $donations['target_date'];
+                    $prg_percent = ceil(abs($pledged/$donations['target_amount']) * 100);
+        
+        
+                  ?>
+                  <h2 class="pledged-amount has-no-margin">#<?php echo number_format($pledged); ?></h2>
+                  <p>Pledged out of <span class="text-danger"> #<?= number_format($donations['target_amount']); ?></span> goal</p>
+                  <div class="progress">
+                    <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="<?= $prg_percent; ?>" aria-valuemin="0" aria-valuemax="100" style="width: <?= $prg_percent; ?>%"><span class="sr-only"><?= $prg_percent; ?>% Complete</span><?= $prg_percent; ?>%</div>
+                  </div>
+                  <div class="clearfix">
+                    <div>
+                      <?php
+                          $propose_date = $donations['target_date'];
+  
+                          $proposed_date = strtotime($propose_date);
+                          $currentDate = date('F jS, Y');
+                          $currentTime = strtotime($currentDate);
     
-                            $proposed_date = strtotime($propose_date);
-                            $currentDate = date('F jS, Y');
-                            $currentTime = strtotime($currentDate);
-      
-                            if($currentTime < $proposed_date)
-                            {
-                              $daysLeft = ceil(abs($proposed_date - $currentTime)/86400);
-                            }
-                            elseif($proposed_date === $currentTime)
-                            {
-                              $daysLeft = 0;
-                            }
-                            else
-                            {
-                              $daysLeft = "Target date already passed";
-                            }
-                        ?>
-                        <h3 class="pledged-amount text-center text-danger"><?= $daysLeft; ?></h3>
-                        <p class="text-center text-danger">Days left</p>
-                      </div>
+                          if($currentTime < $proposed_date)
+                          {
+                            $daysLeft = ceil(abs($proposed_date - $currentTime)/86400);
+                          }
+                          elseif($proposed_date === $currentTime)
+                          {
+                            $daysLeft = 0;
+                          }
+                          else
+                          {
+                            $daysLeft = "Target date already passed";
+                          }
+                      ?>
+                      <h3 class="pledged-amount text-center text-danger"><?= $daysLeft; ?></h3>
+                      <p class="text-center text-danger">Days left</p>
                     </div>
-                    <div class="text-center has-margin-xs-top"> 
-                      <script src="https://js.paystack.co/v1/inline.js"></script>
-                      <input type="number" name="donateAmount" placeholder="Enter amount to donate" style="margin-bottom: 10px;" class="form-control" id="amountToDonate">
-                      <input class="btn btn-primary btn-lg" <?php disable_button(); ?>> </div>
+                  </div>
+                  <div class="text-center has-margin-xs-top"> 
+                    <script src="https://js.paystack.co/v1/inline.js"></script>
+                    <input type="number" name="donateAmount" placeholder="Enter amount to donate" style="margin-bottom: 10px;" class="form-control" id="amountToDonate">
+                    <input class="btn btn-primary btn-lg" <?php disable_button(); ?>> 
                   </div>
                 </div>
                 <!--// END Donate Box-->

@@ -80,11 +80,35 @@ function disable_button()
 ?>
 
 <!--SUBPAGE HEAD-->
+<style>
+  #topbar
+  {
+    background-image: url('images/contactus2.png');
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-blend-mode: inherit;
+  }
+  #shadow1{
+    text-shadow:
+      3px 3px 0 #4268B3,  
+      3px 3px 0 #4268B3,
+      3px 3px 0 #4268B3,
+      3px 3px 0 #4268B3;
+  }
+  #shadow2{
+    text-shadow:
+      3px 1px 0 #4268B3,  
+      3px 1px 0 #4268B3,
+      3px 1px 0 #4268B3,
+      3px 1px 0 #4268B3;
+  }
+</style>
 
-<div class="subpage-head has-margin-bottom">
-  <div class="container">
-    <h3>Contact us</h3>
-    <p class="lead">Our Church address and contact details</p>
+<div class="subpage-head has-margin-bottom" id="topbar">
+  <div class="container" style="color: #fff; font-weight: bold;">
+    <h2><span style="color: #fff;" id="shadow1">Contact us</span></h2>
+    <p class="lead" style="font-size: 1.6em;" id="shadow2">Our Church address and contact details</p>
   </div>
 </div>
 

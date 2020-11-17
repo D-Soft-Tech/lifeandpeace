@@ -132,10 +132,26 @@
 
 <!--SUBPAGE HEAD-->
 
-<div class="subpage-head" style="margin-bottom: 15px;">
-  <div class="container">
-    <h3>Programs &amp; Events </h3>
-    <p class="lead">List of Upcoming Events and Programs</p>
+<style>
+  #topbar
+  {
+    background-image: url('images/program.jpg');
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-blend-mode: inherit;
+    text-shadow:
+      1px 2px 0 #4268B3,  
+      1px 2px 0 #4268B3,
+      1px 2px 0 #4268B3,
+      1px 2px 0 #4268B3;
+  }
+</style>
+
+<div class="subpage-head" id="topbar" style="margin-bottom: 15px;">
+  <div class="container" style="color: #fff; font-weight: bold;">
+    <h3><span style="color: #fff;">Programs &amp; Events</span></h3>
+    <p class="lead" style="font-size: 1.6em;">List of Upcoming Events and Programs</p>
   </div>
 </div>
 <!-- // END SUBPAGE HEAD -->

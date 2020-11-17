@@ -113,9 +113,25 @@
 
 <!--SUBPAGE HEAD-->
 
-<div class="subpage-head" style="margin-bottom: 1%;">
-  <div class="container">
-    <h3>Photo Gallery</h3>
+<style>
+    #topbar
+    {
+        background-image: url('images/photoBackground2.png');
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-blend-mode: darken;
+        text-shadow:
+            2px 2px 0 #4268B3,  
+            2px 2px 0 #4268B3,
+            2px 2px 0 #4268B3,
+            2px 2px 0 #4268B3;
+    }
+</style>
+
+<div class="subpage-head" id="topbar" style="margin-bottom: 1%;">
+  <div class="container" style="color: #fff; font-weight: bold;">
+    <h3><span style="color: #fff;">Photo Gallery</span></h3>
     <p class="lead">Curated mages of our church programs and events</p>
   </div>
 </div>

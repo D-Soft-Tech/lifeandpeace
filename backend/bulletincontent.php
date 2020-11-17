@@ -12,32 +12,11 @@
         <div class="card mb-3 widget-content bg-premium-dark">
             <div class="widget-content-wrapper text-white">
                 <div class="widget-content-left">
-                    <div class="" aria-haspopup="true" 
-                        aria-expanded="false" data-toggle="dropdown" >
+                    <div>
                         <h5 class="font-weight-bold">
-                            <span id="show"><?= $articleComments[0]['article_title']; ?></span>
-                            <span aria-haspopup="true" aria-expanded="false" 
-                            class="dropdown-toggle">
-                                <span class="sr-only">Toggle Dropdown</span>
-                            </span>
+                            <span id="show">Comments on Articles</span>
                         </h5>
                     </div>
-                    
-                    <div tabindex="-1" role="menu" aria-hidden="true" class="dropdown-menu">
-                        
-                        <?php foreach($articleComments as $articleComments) :  ?>
-                            <button type="button" tabindex="0" id="<?= $articleComments['articles_id']; ?>" class="dropdown-item" onclick="show(this.id)">
-                                <?= $articleComments['article_title']; ?>
-                            </button>
-                        <?php endforeach; ?>
-
-                    </div>
-                </div>
-                <div class="widget-content-right">
-                    <div class=""><span class="font-weight-bold">View Pending</span> <sup class="badge badge-info badge-pill font-weight-bold" id="pending">0</sup></div>
-                </div>
-                <div class="widget-content-right">
-                    <div class=""><span class="font-weight-bold">View Allowed</span> <sup class="badge badge-success badge-pill font-weight-bold" id="allowed">0</sup></div>
                 </div>
             </div>
         </div>
@@ -76,7 +55,7 @@
 <!-- The pending bulletin messages are being looped here -->
 <?php foreach($pendingArticleComments as $pendingArticleComments) :  ?>
     <div class="main-card mb-3 card" id="<?= $pendingArticleComments['comment_id']; ?>">
-        <div class="card-header"><?= $pendingArticleComments['full_name']; ?></div>
+        <div class="card-header"><?= $pendingArticleComments['full_name']; ?>&nbsp; &nbsp; &nbsp; <span class="small"> commented on </span> &nbsp; &nbsp; &nbsp;<?= $pendingArticleComments['article_title']; ?></div>
         <div class="card-body">
             <p class="text-justiy">
                 <?= $pendingArticleComments['comment']; ?>

@@ -1926,3 +1926,549 @@ Monday October 26th, 2020 (4:15am):- SQLSTATE[HY000] [2002] A socket operation w
 Monday October 26th, 2020 (4:15am):- SQLSTATE[HY000] [2002] php_network_getaddresses: getaddrinfo failed: No such host is known. 
 Monday October 26th, 2020 (4:54am):- SQLSTATE[HY000] [2002] php_network_getaddresses: getaddrinfo failed: No such host is known. 
 Saturday October 31st, 2020 (5:11am):- SQLSTATE[HY000] [2002] php_network_getaddresses: getaddrinfo failed: No such host is known. 
+Monday November 16th, 2020 (12:21pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:21pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:21pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:21pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:21pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:21pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:21pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:21pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:21pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:21pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:21pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:21pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:21pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:21pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:21pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:21pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:21pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:21pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:21pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:21pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:21pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:21pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:22pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:22pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:22pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:22pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:22pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:22pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:22pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:22pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:22pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:22pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:22pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:22pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:22pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:22pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:22pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:22pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:22pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:22pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:22pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:22pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:22pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:22pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:22pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:22pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:22pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:22pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:22pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:22pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:22pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:22pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:22pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:22pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:22pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:22pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:22pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:22pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:22pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:22pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:22pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:22pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:22pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:22pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:22pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:22pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:22pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:22pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:22pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:22pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:22pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:22pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:22pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:22pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:22pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:22pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:22pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:22pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:22pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:22pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:22pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:22pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:22pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:22pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:22pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:22pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:22pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:22pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:22pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:22pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:22pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:22pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:22pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:22pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:22pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:22pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:22pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:22pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:22pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:22pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:22pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:22pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:22pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:22pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:22pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:22pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:22pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:22pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:22pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:22pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:22pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:22pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:22pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:22pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:22pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:22pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:22pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:22pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:22pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:22pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:22pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:22pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:22pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:22pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:22pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:22pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:22pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:22pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:22pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:22pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:22pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:22pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:22pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:22pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:22pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:22pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:22pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:22pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:22pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:22pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:22pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:23pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:23pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:23pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:23pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:23pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:23pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:23pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:23pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:23pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:23pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:23pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:23pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:23pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:23pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:23pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:23pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:23pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:23pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:23pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:23pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:23pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:23pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:23pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:23pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:23pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:23pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:23pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:23pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:23pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:23pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:23pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:23pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:23pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:23pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:23pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:23pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:23pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:23pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:23pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:23pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:23pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:23pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:23pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:23pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:23pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:23pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:23pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:23pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:23pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:23pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:23pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:23pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:23pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:23pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:23pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:23pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:23pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:23pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:23pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:23pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:23pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:23pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:23pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:23pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:23pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:23pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:23pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:23pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:23pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:23pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:23pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:23pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:23pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:23pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:23pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:23pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:23pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:23pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:23pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:23pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:23pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:23pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:23pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:23pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:23pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:23pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:23pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:23pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:23pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:23pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:23pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:23pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:23pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:23pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:23pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:23pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:23pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:23pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:23pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:23pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:23pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:23pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:23pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:23pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:23pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:23pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:23pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:23pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:23pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:23pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:23pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:23pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:23pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:23pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:23pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:23pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:23pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:23pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:23pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:23pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:24pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:24pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:24pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:24pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:24pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:24pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:24pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:24pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:24pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:24pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:24pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Monday November 16th, 2020 (12:24pm):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+

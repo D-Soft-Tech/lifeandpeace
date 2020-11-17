@@ -382,12 +382,10 @@
                                                 if(isset($_POST['live_links']))
                                                 {
                                                     $youtube = $_POST['youtube'];
-                                                    $facebook = $_POST['facebook'];
                                                     $radio = $_POST['radio'];
 
                                                     $q = "UPDATE live_program SET 
                                                             youtube = :youtube,
-                                                            facebook = :facebook,
                                                             radio = :radio
                                                         WHERE id ='1'
                                                         ";
@@ -395,7 +393,6 @@
                                                     global $conn;
                                                     $stmt = $conn->prepare($q);
                                                     $stmt->bindValue(':youtube', $youtube);
-                                                    $stmt->bindValue(':facebook', $facebook);
                                                     $stmt->bindValue(':radio', $radio);
                                                     $result = $stmt->execute();
 
@@ -415,6 +412,40 @@
                                                         echo    '<div class="col-sm-12 alert alert-danger alert-dismissable">'.
                                                                     '<button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>'.
                                                                     '<h6><i class="icon fa pe-7s-attention"></i>Error adding the link, please try again later</h6>'.
+                                                                '</div>';
+                                                    }
+                                                }
+
+                                                if(isset($_POST['revoke_live_links']))
+                                                {
+                                                    $revokeLink = "UPDATE live_program SET 
+                                                            youtube = :youtube,
+                                                            radio = :radio
+                                                        WHERE id ='1'
+                                                        ";
+
+                                                    global $conn;
+                                                    $stmt = $conn->prepare($revokeLink);
+                                                    $stmt->bindValue(':youtube', null);
+                                                    $stmt->bindValue(':radio', null);
+                                                    $result = $stmt->execute();
+
+                                                    $count = $stmt->rowCount();
+                                                    
+                                                    if ($result===true && $count>0)
+                                                    {
+                                                        $success = '<div class="col-sm-12 alert alert-success alert-dismissable">'.
+                                                                        '<button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>'.
+                                                                        '<h6><i class="icon fa pe-7s-check"></i> Success</h6>'.
+                                                                    '</div>';
+
+                                                        echo $success;
+                                                    }
+                                                    else
+                                                    {
+                                                        echo    '<div class="col-sm-12 alert alert-danger alert-dismissable">'.
+                                                                    '<button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>'.
+                                                                    '<h6><i class="icon fa pe-7s-attention"></i>Error revoking the link, please try again later</h6>'.
                                                                 '</div>';
                                                     }
                                                 }
@@ -548,12 +579,6 @@
                                                                 <div class="form-group col-md-12">
                                                                     <label for="youtube"><i class="fab fa-youtube"></i> Youtube</label>
                                                                     <input type="text" class="form-control" name="youtube" id="youtube" required>
-                                                                </div>
-                                                            </div>
-                                                            <div class="form-row">
-                                                                <div class="form-group col-md-12">
-                                                                    <label for="facebook"><i class="fab fa-facebook"></i> Facebook</label>
-                                                                    <input type="text" class="form-control" name="facebook" id="facebook" required>
                                                                 </div>
                                                             </div>
                                                             <div class="form-row">

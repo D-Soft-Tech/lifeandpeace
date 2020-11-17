@@ -19,7 +19,10 @@
         $details = $_POST['details'];
         $link = $_POST['link'];
 
-        $date = date('jS'); $dayOfWeek = date("l"); $day=$dayOfWeek . " $date of "; $month = date("F"); $year = date("Y");
+        $dayNumber = date("jS"); 
+        $day = $dayNumber . " of ";
+        $month = date("F"); 
+        $year = date("Y");
 
         $passport_obj = new Passport($title, $anchor, $details, $link, $day, $month, $year);
         $passport_obj->Upload();
@@ -31,17 +34,22 @@
     <div class="col-xs-12 col-md-8">
         <div class="alert alert-success fade show" role="alert">
             <div class="row">
-                <div class="col-3">
+                <div class="col-2">
                     <span class="fsize-2 font-weight-bold">video</span>
                 </div>
-                <div class="col-4">
+                <div class="col-3">
                     <button class="ml-2 mr-5 btn-transition btn btn-sm btn-outline-primary" data-toggle="modal" data-target="#addvideo">
-                        Add new link
+                        video<sup>+</sup>
                     </button>
                 </div>
-                <div class="col-5">
+                <div class="col-3">
                     <button class="ml-2 mr-5 btn-transition btn btn-sm btn-outline-primary" data-toggle="modal" data-target="#liveVideo">
-                        Add link for live Program
+                        live<sup>+</sup>
+                    </button>
+                </div>
+                <div class="col-4">
+                    <button class="ml-2 mr-5 btn-transition btn btn-sm btn-outline-danger" data-toggle="modal" data-target="#removeLiveVideoModal">
+                        live<sup>-</sup>
                     </button>
                 </div>
             </div>
@@ -141,7 +149,7 @@
                 <div class="col-xs-12 mx-auto px-2" style="height: 350px; width: 100%;">
                     <div class="text-center" id="book-top"> 
                         <iframe class="media-object embed-responsive embed-responsive-16by9" style="height: 350px; width: 100%;"
-                            src="https://youtube.com/embed/-c8LoR84Xjs" frameborder="0" allowfullscreen>
+                            src="<?= $videos['link']; ?>" frameborder="0" allowfullscreen>
                         </iframe>
                         <div class="overlay">
                             <button id="<?= $videos['id']; ?>" class="btn btn-dark removeVideo" title="Delete"><i class="fa fa-lg fa-trash removeVideo"></i></button>
@@ -152,9 +160,6 @@
                     <div class="row">
                         <div class="col-md-12">
                             <h6 class="text-info"><?= $videos['title']; ?></h6>
-                        </div>
-                        <div class="col-md-12">
-                            <h6 class="">Views: <span class="text-success">120</span></h6>
                         </div>
                     </div>
                 </div>
@@ -206,6 +211,40 @@
                     <button type="submit" name="addNewVideo" value="addNewVideo" class="btn btn-primary btm-sm btn-block">Upload</button>
                 </form>
             </div>
+        </div>
+    </div>
+</div>
+
+<!-- Revoke live link -->
+<div class="modal fade mt-5" id="removeLiveVideoModal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" data-backdrop="false">
+    <div class="modal-dialog">
+        <div class="modal-content">
+        <div class="modal-header text-danger">
+            <h5 class="modal-title">
+                Warning <i class="fa fa-exclamation-triangle"></i> 
+            </h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body">
+            <div class="position-relative">
+                <p>
+                    <h6 class="text-center">You are about to <b>revoke the live links</b></h6>
+                </p>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button class="mr-5 btn-transition btn btn-outline-success" data-dismiss="modal">
+                Cancel
+            </button>
+            <form method="POST">
+                <input type="text" name="revoke_live_links" value="revokeLink" hidden>
+                
+                <button type="submit" class="mr-5 btn-transition btn btn-outline-danger">
+                    Yes, Proceed
+                </button>
+            </form>
         </div>
     </div>
 </div>

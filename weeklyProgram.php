@@ -53,10 +53,26 @@
 
 <!--SUBPAGE HEAD-->
 
-<div class="subpage-head" style="margin-bottom: 15px;">
-  <div class="container">
-    <h3>Weekly Program </h3>
-    <p class="lead">List of our weekly meetings </p>
+<style>
+  #topbar
+  {
+    background-image: url('images/program.png');
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-blend-mode: inherit;
+    text-shadow:
+      1px 1px 0 #4268B3,  
+      1px 1px 0 #4268B3,
+      1px 1px 0 #4268B3,
+      1px 1px 0 #4268B3;
+  }
+</style>
+
+<div class="subpage-head" id="topbar" style="margin-bottom: 15px;">
+  <div class="container" style="color: #fff; font-weight: bold;">
+    <h3><span style="color: #fff;">Weekly Program</span></h3>
+    <p class="lead" style="font-size: 1.6em;">List of our weekly meetings </p>
   </div>
 </div>
 <!-- // END SUBPAGE HEAD -->
@@ -67,7 +83,7 @@
         <nav aria-label="Page navigation">
         <ul class="pagination">
             <?php 
-            $weekDay = array('Sunday', 'Monday', 'Tuesday', 'Thursday', 'Friday', 'Saturday');
+            $weekDay = array('Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday');
             $dayOfTheWeek = array('Su', 'M', 'T', 'W', 'Th', 'F', 'S');
                 for($i=0; $i< COUNT($dayOfTheWeek); ++$i)
                 {

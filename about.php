@@ -22,11 +22,38 @@
 
 ?>
 
+<style>
+  .owl-carousel .owl-stage{
+  display: flex;
+  align-items: center;
+}
+
+.owl-carousel img{
+  margin: auto;
+}
+
+.owl-carousel .caption {
+  text-align: center;
+}
+
+#about{
+  background-image: url('images/about.jpg');
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  text-shadow:
+        3px 3px 0 #4268B3,  
+        3px 3px 0 #4268B3,
+        3px 3px 0 #4268B3,
+        3px 3px 0 #4268B3;
+}
+
+</style>
 <!--SUBPAGE HEAD-->
 
-<div class="subpage-head has-margin-bottom">
+<div class="subpage-head has-margin-bottom" id="about">
   <div class="container">
-    <h3>About us</h3>
+    <h2><span style="color: white; font-weight: bold;">About us</span></h2>
   </div>
 </div>
 
@@ -53,7 +80,7 @@
         <div class="section-title">
           <h4> RECENT ARTICLES </h4>
         </div>
-        <a href="#"><img src="images/video-thumb.jpg" class="img-responsive center-block" alt="video thumb"></a>
+        <a href="#"><img src="images/article.jpg" class="img-responsive center-block" alt="video thumb"></a>
         <?php
           
           $sql_donations = "
@@ -90,33 +117,22 @@
   <?php
     $result = $conn->query("SELECT * FROM team ORDER BY id DESC");
   ?>
-  <div class="row feature-block">
+  <div class="row owl-carousel">
     <?php
       while($teams = $result->fetch())
       {
     ?>
-    <div class="col-md-4 col-sm-6 has-margin-bottom"> 
-    <img class="img-circle" src="images/team/<?= $teams['full_name']?>.<?= $teams['ext'];?>" alt="<?= $teams['title']; ?> <?= $teams['full_name']; ?>" style="height: 250px; width: 250px;"></img>
-      <h5><?= $teams['title']; ?> <?= $teams['full_name']; ?></h5>
+    <div class="has-margin-bottom item"> 
+      <img class="img-circle" src="images/team/<?= $teams['full_name']?>.<?= $teams['ext'];?>" alt="<?= $teams['title']; ?> <?= $teams['full_name']; ?>" style="height: 250px; width: 250px;"></img>
+      <div class="caption"><h5><?= $teams['title']; ?> <?= $teams['full_name']; ?></h5>
       <p><?= $teams['roles']; ?></p>
       <p><?= truncate($teams['about']); ?></p>
-      <p><a href="<?= $teams['facebook']; ?>" target="_blank" role="button">Facebook</a> / <a href="<?= $teams['tweeter']; ?>" target="_blank" role="button">Twitter</a></p>
+      <p><a href="<?= $teams['facebook']; ?>" target="_blank" role="button">Facebook</a> / <a href="<?= $teams['tweeter']; ?>" target="_blank" role="button">Twitter</a></p></div>
     </div>
     <!-- /.col-md-4 -->
     <?php
       }
     ?>
-    <div class="col-md-4 col-sm-6 has-margin-bottom"> <img class="img-responsive" src="images/team-2.jpg" alt="ministry sermon">
-      <h5>FR: VINCENT</h5>
-      <p>Fermentum massa.Etiam porta sem malesuada magna mollis euismod. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa.</p>
-      <p><a href="#" role="button">Facebook</a> / <a href="#" role="button">Twitter</a></p>
-    </div>
-    <!-- /.col-md-4 -->
-    <div class="col-md-4 col-sm-8 col-sm-offset-2 col-md-offset-0 center-this has-margin-bottom"> <img class="img-responsive" src="images/team-3.jpg" alt="bulletin programs">
-      <h5>THIMOTHY FRANCIS</h5>
-      <p> Etiam porta sem malesuada magna mollis euismod. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa etiam porta fusce dapibus.</p>
-      <p><a href="#" role="button">Facebook</a> / <a href="#" role="button">Twitter</a></p>
-    </div>
     <!-- /.col-md-4 --> 
   </div>
 <!-- // END OUR TEAM --> 
@@ -134,14 +150,12 @@ width="100%" height="450" frameborder="0" style="border:0; margin-bottom: 15px;"
 ?>
 
 <script type="text/javascript">
-  $('.ourTeam').owlCarousel({
+  $('.owl-carousel').owlCarousel({
     loop:true,
-    margin:10,
-    nav:true,
-    navText: [
-        "<span class='nav-arrow left'></i>",
-        "<span class='nav-arrow right'></i>"
-        ],
+    margin:20,
+    autoplay:true,
+    autoplayTimeout:3000,
+    autoplayHoverPause:true,
       responsive:{
           0:{
               items:1
@@ -154,6 +168,28 @@ width="100%" height="450" frameborder="0" style="border:0; margin-bottom: 15px;"
           }
       }
   })
+
+
+//   $('.owl-carousel').owlCarousel({
+//     loop:true,
+//     margin:10,
+//     nav:true,
+//     navText: [
+//         "<span class='nav-arrow left'></i>",
+//         "<span class='nav-arrow right'></i>"
+//         ],
+//     responsive:{
+//         0:{
+//             items:1
+//         },
+//         600:{
+//             items:2
+//         },
+//         1000:{
+//             items:3
+//         }
+//     }
+// })
 </script>
 
 </body>

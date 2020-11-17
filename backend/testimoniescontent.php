@@ -118,6 +118,6 @@
             }
         );
     }
-
-    setInterval("testimonies('testimonies', 'test')", 300);
+    setTimeout("testimonies('testimonies', 'test')", 1000);
+    setInterval("testimonies('testimonies', 'test')", 180000);
 </script>

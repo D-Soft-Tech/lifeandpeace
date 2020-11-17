@@ -394,8 +394,8 @@
                                                 $page = page();
 
                                                 $start = ($page - 1) * $limit;
-                                                $result = $conn->query("SELECT full_name, comments.* FROM users, comments 
-                                                WHERE users.user_id = comments.user_id && comments.obj = 'articles' && comments.status = 'pending' 
+                                                $result = $conn->query("SELECT full_name, comments.*, article_title FROM users, comments, articles
+                                                WHERE users.user_id = comments.user_id && comments.obj = 'articles' && comments.obj_id = articles_id && comments.status = 'pending' 
                                                 ORDER BY comment_id DESC LIMIT $start, $limit");
                                                 $pendingArticleComments = $result->fetchAll();
 

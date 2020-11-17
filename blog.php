@@ -126,11 +126,25 @@
 ?>
 
 <!--SUBPAGE HEAD-->
+<style>
+  #topbar
+  {
+    background-image: url('images/blog.png');
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-shadow:
+        3px 3px 0 #4268B3,  
+        3px 3px 0 #4268B3,
+        3px 3px 0 #4268B3,
+        3px 3px 0 #4268B3;
+  }
+</style>
 
-<div class="subpage-head has-margin-bottom">
-  <div class="container">
-    <h3>Our Blog</h3>
-    <p class="lead">Articles and latest bulletins corner</p>
+<div class="subpage-head has-margin-bottom" id="topbar">
+  <div class="container" style="color: #fff; font-weight: bold;">
+    <h3><span style="color: #fff; font-size: 1.5em;">Our Blog</span></h3>
+    <p class="lead" style="font-size: 1.6em;">Articles and latest bulletins</p>
   </div>
 </div>
 

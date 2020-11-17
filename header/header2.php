@@ -1,3 +1,15 @@
+<?php
+
+  if(isset($_POST['logoutPassword']))
+  {
+
+    unset($_SESSION['username_frontEnd']);
+    unset($_SESSION['password_frontEnd']);
+    unset($_SESSION['shoppingCart']);
+
+  }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,6 +29,7 @@ The three most essential aspect of our family are: Sound Teachings, Sweet Fellow
 <link rel="stylesheet" href="assets/jssocial/jssocials-theme-flat.css.css">
 <link rel="stylesheet" href="assets/forala/css/froala_editor.pkgd.min.css">
 <link href="css/fancybox.css" rel="stylesheet">
+<link href="js/aos/aos.css" rel="stylesheet">
 <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
 <!--[if lt IE 9]>
   <script src="js/html5shiv.js"></script>

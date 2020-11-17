@@ -407,7 +407,7 @@
 
                                             $sql = "
                                                         SELECT id, full_name, address, amount,
-                                                         transc_time FROM users, transactions 
+                                                         transc_time, day, month, year FROM users, transactions 
                                                          WHERE transactions.purpose = 'donation' 
                                                          && transactions.purpose_id = :id && 
                                                          users.user_id = transactions.user_id 

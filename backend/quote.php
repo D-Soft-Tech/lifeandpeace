@@ -504,7 +504,7 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <button type="submit" name="submit" value="submit" class="mt-1 btn btn-primary">Post Quote</button>
+                                                    <button type="submit" name="submitQuote" value="submit" class="mt-1 btn btn-primary">Post Quote</button>
                                                 </form>
                                             </div>
                                         </div>

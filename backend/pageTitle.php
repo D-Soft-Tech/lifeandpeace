@@ -64,6 +64,8 @@
                                                     );
                                                 }
 
-                                                setInterval("inbox('contacts', 'contacts')", 1000);
-                                                setInterval("inbox('articles', 'articles')", 1000);
+                                                setTimeout("inbox('contacts', 'contacts')", 1000);
+                                                setInterval("inbox('contacts', 'contacts')", 180000);
+                                                setTimeout("inbox('articles', 'articles')", 1000);
+                                                setInterval("inbox('articles', 'articles')", 180000);
                                             </script>

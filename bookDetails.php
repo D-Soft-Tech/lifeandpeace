@@ -1,6 +1,21 @@
 <?php
     session_start();
 
+    //getting the api_key to use
+    include_once 'life/php/db.php';
+
+    $conn = get_DB();
+    
+    $api =  "
+    SELECT api_key FROM account WHERE purpose = :book
+    ";
+
+    $stmt = $conn->prepare($api);
+    $stmt->bindValue(':book', 'book');
+    $apiResource = $stmt->execute();
+
+    $api_key = $stmt->fetch();
+
     $alertMessage = "";
 
     if(isset($_GET['submitAddToCart']) && $_GET['submitAddToCart'] === "submitAddToCart")
@@ -91,6 +106,15 @@
             // echo $loginPrompt;
         }  
     }
+
+    if(isset($_POST['logoutPassword']))
+    {
+
+        unset($_SESSION['username_frontEnd']);
+        unset($_SESSION['password_frontEnd']);
+        unset($_SESSION['shoppingCart']);
+
+    }
 ?>
 
 <!DOCTYPE html>
@@ -180,7 +204,7 @@ The three most essential aspect of our family are: Sound Teachings, Sweet Fellow
             {
                 echo  '<ul class="dropdown-menu dropdown-menu-left" role="menu">'.
                         '<li>'.
-                        '<a href="" class="mr-0 pr-0 dropdown-item" data-toggle="modal" data-target="#loginModal"><b>Log out</b></a>'.
+                            '<a href="#" type="button" class="mr-0 pr-0 dropdown-item logOut" name="'.$_SESSION['password_frontEnd'].'" id="'.$_SESSION['username_frontEnd'].'"><b>Log out</b></a>'.
                         '</li>'.
                     '</ul>';
             }
@@ -250,16 +274,10 @@ The three most essential aspect of our family are: Sound Teachings, Sweet Fellow
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <script src="https://js.paystack.co/v1/inline.js"></script>
-                                    <div class="col-xs-4">
-                                        <a class="btn-transition btn btn-success" onclick="payWithPaystack()" title="buy now">
-                                            <i class="fa fa-credit-card"></i>
-                                        </a>
-                                    </div>
-                                    <div class="col-xs-4"><a 
+                                    <div class="col-xs-6"><a 
                                     href="bookDetails.php?book_id=<?= $book_id; ?>&book_description=<?= $book_description;?>&book_price=<?= $book_price;?>&book_volume=<?= $book_volume; ?>&book_page=<?= $book_page;?>&book_title=<?= $book_title; ?>&book_ext1=<?= $book_ext1; ?>&book_ext2=<?= $book_ext2; ?>&submitAddToCart=submitAddToCart"
                                      type="button" class="btn-transition btn btn-success" title="Add to cart"><i class="fa fa-cart-plus"></i></a></div>
-                                    <div class="col-xs-4"><a  href="books.php" class="btn-link"><button title="Go Back to Books" class="btn-transition btn btn-success"><i class="fa fa-arrow-left"></i></button></a></div>
+                                    <div class="col-xs-6"><a  href="books.php" class="btn-link"><button title="Go Back to Books" class="btn-transition btn btn-success"><i class="fa fa-arrow-left"></i></button></a></div>
                                 </div>
                             </div>
                         </div>
@@ -286,40 +304,25 @@ The three most essential aspect of our family are: Sound Teachings, Sweet Fellow
                                 <sup><span id="shoppingCartBadge" class="badge">0</span></sup>
                             </div>
                             <div class="col-xs-7">
-                            <form method="post"><input type="submit" class="btn btn-success" title="Pay for Cart" name="payCart" value="pay"></form>
+                                <form action="books.php" method="post"><input type="submit" class="btn btn-success" title="Pay for Cart" name="payCart" value="pay"></form>
                             </div>
                         </div>
-                        <br />
-                        <div>
-                            <div class="blog-search has-margin-xs-bottom">
-                                <div class="input-group input-group-lg">
-                                    <input type="text" class="form-control" placeholder="Search..">
-                                    <span class="input-group-btn">
-                                        <button class="btn btn-default" type="button"><i class="glyphicon glyphicon-search glyphicon-lg"></i></button>
-                                    </span>
-                                </div>
-                            </div>
-                            <div id="book_search"></div>
-                        </div>
+
                         <h6>New Arrivals</h6> 
-                        <a href="#" class="list-group-item">
-                            <p class="list-group-item-heading">Heavens and the earth Heavens and the earth</p>
-                        </a>
-                        <a href="#" class="list-group-item">
-                            <p class="list-group-item-heading">Heavens and the earth</p>
-                        </a>
-                        <a href="#" class="list-group-item">
-                            <p class="list-group-item-heading">Heavens and the earth</p>
-                        </a>
-                        <a href="#" class="list-group-item">
-                            <p class="list-group-item-heading">Heavens and the earth</p>
-                        </a>
-                        <a href="#" class="list-group-item">
-                            <p class="list-group-item-heading">Heavens and the earth</p>
-                        </a>
-                        <a href="#" class="list-group-item">
-                            <p class="list-group-item-heading">Heavens and the earth</p>
-                        </a>
+                        <?php
+
+                            $sql = "SELECT * FROM books ORDER BY book_id DESC LIMIT 10";
+
+                            $stmt = $conn->prepare($sql);
+                            $stmt->execute();
+
+                            while($lastTenBooks = $stmt->fetch())
+                            {
+                        ?>
+                            <a href="bookDetails.php?book_id=<?= $lastTenBooks['book_id']; ?>&book_description=<?= $lastTenBooks['book_description'];?>&book_price=<?= $lastTenBooks['price'];?>&book_volume=<?= $lastTenBooks['volume'];?>&book_page=<?= $lastTenBooks['page_count'];?>&book_title=<?= $lastTenBooks['book_title'];?>&book_ext1=<?= $lastTenBooks['ext'];?>&book_ext2=<?= $lastTenBooks['ext2'];?>" class="list-group-item">
+                                <p class="list-group-item-heading"><?= $lastTenBooks['book_title']; ?></p>
+                            </a>
+                        <?php } ?>
                     </div>
                 </div>
             </dvi>

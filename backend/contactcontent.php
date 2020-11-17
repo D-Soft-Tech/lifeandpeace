@@ -141,5 +141,6 @@
             }
         );
     }
-    setInterval("inbox('contacts', 'sup')", 500);
+    setTimeout("inbox('contacts', 'sup')", 1000);
+    setInterval("inbox('contacts', 'sup')", 180000);
 </script>

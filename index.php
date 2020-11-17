@@ -19,6 +19,23 @@
     }
     return $string;
   }
+
+  function truncate2($string)
+  {
+    // strip tags to avoid breaking any html
+    $string = strip_tags($string);
+    if (strlen($string) > 60)
+    {
+
+        // truncate string
+        $stringCut = substr($string, 0, 350);
+        $endPoint = strrpos($stringCut, '...');
+
+        //if the string doesn't contain any space then it will cut without word basis.
+        $string = $endPoint ? substr($stringCut, 0, $endPoint) : substr($stringCut, 0);
+    }
+    return $string;
+  }
   
 ?>
 
@@ -42,6 +59,68 @@
     position: absolute;
     top: 55%;
     }
+
+
+    /*--------------------------------------------------------------
+# Quotes
+--------------------------------------------------------------*/
+.quotes {
+  padding: 80px 0;
+  background: url("images/background/quote.jpg") no-repeat;
+  background-position: center center;
+  background-size: cover;
+  position: relative;
+}
+
+.quotes::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.quotes .section-header {
+  margin-bottom: 40px;
+}
+
+.quotes .quote-item {
+  text-align: center;
+  color: #fff;
+}
+
+.quotes .quote-item h3 {
+  font-size: 20px;
+  font-weight: bold;
+  margin: 10px 0 5px 0;
+  color: #fff;
+}
+
+.quotes .quote-item h4 {
+  font-size: 14px;
+  color: #ddd;
+  margin: 0 0 15px 0;
+}
+
+.quotes .quote-item p {
+  font-style: italic;
+  margin: 0 auto 15px auto;
+  color: #eee;
+}
+
+@media (min-width: 1024px) {
+  .quotes {
+    background-attachment: fixed;
+  }
+}
+
+@media (min-width: 992px) {
+  .quotes .quote-item p {
+    width: 80%;
+  }
+}
 </style>
 
 <!-- BANNER SLIDER
@@ -58,18 +137,17 @@
       <div class="container">
         <div class="carousel-caption">
           <h3>EXPERIENCE GOD'S</h3>
-          <h1>UNCEASING PROVISION</h1>
+          <h1>UNENDING LOVE</h1>
           
-          <p><a class="btn btn-giant btn-primary" href="charity-donation.php" role="button">JOIN US &rarr;</a></p>
+          <p><a class="btn btn-giant btn-primary" href="events-programs.php" role="button">JOIN US &rarr;</a></p>
         </div>
       </div>
     </div>
     <div class="item slide-two">
       <div class="container">
         <div class="carousel-caption">
-          <h2>Waves of Grace</h2>
-          <p class="lead">Receive the unceasing wave after wave, after wave, after wave of Grace God has for you.</p>
-          <p><a class="btn btn-lg btn-primary" href="ministry.php" role="button">Learn more &rarr;</a></p>
+          <h2>Greener Pasture</h2>
+          <p><a class="btn btn-lg btn-primary" href="books.php" role="button">Books &rarr;</a></p>
         </div>
       </div>
     </div>
@@ -77,13 +155,14 @@
       <div class="container">
         <div class="carousel-caption">
           <h2>Grace and Truth</h2>
-          <p class="lead">For God did not send his Son into the world to condemn the world, but to save the world through him. <em>John 3:17</em></p>
+          <p class="lead">And ye shall know the truth and the truth shall set you free. <em></em></p>
           <p><a class="btn btn-lg btn-primary" href="image-gallery.php" role="button">Browse gallery &rarr;</a></p>
         </div>
       </div>
     </div>
   </div>
-  <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a> <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a> </div>
+  <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a> <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
+</div>
 <!-- // Banner Slider --> 
 
 <!--UPCOMING EVENT-->
@@ -114,7 +193,7 @@
           <div class="row">
             <div class="col-xs-12">
               <div class="text-center" id="book-top">
-                <img class="img-fulid img-responsive" src="<?php echo 'images/audio/'.$messages['title'].'.'.$messages['ext']; ?>" style="height: 100%; width: 100%;"alt="church">
+                <img class="img-fulid img-responsive" style="height: 30vh; margin-right: auto; margin-left: auto;" src="<?php echo 'images/audio/'.$messages['title'].'.'.$messages['ext']; ?>" style="height: 100%; width: 100%;"alt="church">
                 <audio class="overlay_audio" controls style="height: 30px;">
                     <source src="audio_messages/<?= $messages['title']; ?>.<?= $messages['ext2']; ?>" type="audio/<?= $messages['ext2']; ?>">
                 </audio>
@@ -124,7 +203,7 @@
           <div class="row">
             <div class="col-xs-12">
               <h5><?= $messages['title']; ?></h5>
-              <p class="text-justify"><?php echo $messages['details']; ?></p>
+              <p class="text-justify"><?php echo truncate2($messages['details']); ?></p>
               <p><a href="audio-gallery.php" role="button">download all Sermons →</a></p>
             </div>
           </div>
@@ -137,17 +216,17 @@
 <!-- // END FEATURED BLOCK--> 
 
 <!--EVENT LISTS-->
-<div class="highlight-bg has-margin-bottom">
+<div class="has-margin-bottom" style="background-color: #F6F9FE; padding-top: 25px; padding-bottom: 25px;">
   <div class="container event-list">
-    <div class="section-title">
-      <h4> PROGRAMS &amp; EVENTS </h4>
+    <div class="section-title section-title2">
+      <h4 style="color: #4268B3;"> PROGRAMS &amp; EVENTS </h4>
     </div>
     <div class="row">
       <div class="col-md-12">
         <div class="owl-carousel">
           <div class="el-block item">
-            <h4> OUR PROGRAMS </h4>
-            <p class="el-head">Weekly meeting &amp; prayer</p>
+            <h4 style="font-family: 'Open Sans', sans-serif; color: #444444;"> OUR PROGRAMS </h4>
+            <p class="el-head" style="font-family: 'Open Sans', sans-serif; color: #444444;">Weekly meeting &amp; prayer</p>
             <span>Weekly</span>
             <p class="el-cta"><a class="btn btn-primary" href="weeklyProgram.php" role="button">Details &rarr;</a></p>
           </div>
@@ -161,8 +240,8 @@
             ?>
 
               <div class="el-block item">
-                <h4>  <?php echo $events['event_from']; ?> </h4>
-                <p class="el-head"><?php echo $events['theme']; ?></p>
+                <h4 style="font-family: 'Open Sans', sans-serif; color: #444444;">  <?php echo $events['event_from']; ?> </h4>
+                <p class="el-head" style="font-family: 'Open Sans', sans-serif; color: #444444;"><?php echo $events['theme']; ?></p>
                 <span><?php echo $events['event_time']; ?></span>
                 <p class="el-cta"><a class="btn btn-primary" href="event-single.php?theme=<?= $events['theme']; ?>&details=<?= $events['details']; ?>&from=<?= $events['event_from']; ?>&ext=<?= $events['ext']; ?>" role="button">Details &rarr;</a></p>
               </div>
@@ -203,7 +282,7 @@
         <div class="col-md-8 col-sm-8 bulletin">
           <h4 class="media-heading"><?= $articles['article_title']; ?> </h4>
           <p class="text-justify"> <?= truncate($articles['article_details']); ?></p>
-          <a class="btn btn-primary" href="blog-single.php" role="button">Read Article →</a> 
+          <a class="btn btn-primary" href="blog-single.php?articleID=<?= $articles['articles_id']; ?>" role="button">Read Article →</a> 
         </div>
       </div>
       <?php
@@ -218,20 +297,21 @@
         <div class="section-title">
           <h4> RECENT SERMONS </h4>
         </div>
-        <a href="#"><img src="images/video-thumb.jpg" class="img-responsive center-block" alt="video thumb"></a>
-        <div class="list-group"> <a href="sermons.php" class="list-group-item">
-          <p class="list-group-item-heading">Heavens and the earth</p>
-          <p class="list-group-item-text">24:15 mins</p>
-          </a> <a href="sermons.php" class="list-group-item">
-          <p class="list-group-item-heading">Prayer and petition</p>
-          <p class="list-group-item-text">12:00 mins</p>
-          </a> <a href="sermons.php" class="list-group-item">
-          <p class="list-group-item-heading">Fruit of the Spirit</p>
-          <p class="list-group-item-text">30:25 mins</p>
-          </a> <a href="sermons.php" class="list-group-item">
-          <p class="list-group-item-heading">Do not be afraid; keep on...</p>
-          <p class="list-group-item-text">17:00 mins</p>
-          </a> </div>
+        <a href="audio-gallery.php" title="Audio Messages"><img src="images/audio2.jpg" class="img-responsive center-block" alt="Recent Sermons"></a>
+        <div class="list-group">
+          <?php
+            $recentSermon = $call->recent_sermons();
+
+            while($recentSermons = $recentSermon->fetch(PDO::FETCH_ASSOC))
+            {
+          ?>
+          <p>
+            <a class="list-group-item" href="audio-gallery.php?searchInput=<?= $recentSermons['title']; ?>"><?= $recentSermons['title']; ?></a>
+          </p>
+          <?php
+            }
+          ?>
+        </div>
       </div>
     </div>
   </div>
@@ -310,53 +390,62 @@
     <h4> OUR GALLERY </h4>
   </div>
   <div class="img-gallery row">
-    <div class="col-sm-4 col-md-3"> <a class="fancybox" href="images/gallery/img_gallery_1.jpg" data-fancybox-group="gallery" title="church image gallery"> <img src="images/gallery/thumb/gallery_thumb_1.jpg" class="img-responsive" width="270" height="270" alt="church image gallery"> </a> </div>
-    <div class="col-sm-4 col-md-3"> <a class="fancybox" href="images/gallery/img_gallery_2.jpg" data-fancybox-group="gallery" title="church image gallery"> <img src="images/gallery/thumb/gallery_thumb_2.jpg" class="img-responsive" width="270" height="270" alt="church image gallery"> </a> </div>
-    <div class="col-sm-4 col-md-3"> <a class="fancybox" href="images/gallery/img_gallery_3.jpg" data-fancybox-group="gallery" title="church image gallery"> <img src="images/gallery/thumb/gallery_thumb_3.jpg" class="img-responsive" width="270" height="270" alt="church image gallery"> </a> </div>
-    <div class="col-sm-4 col-md-3"> <a class="fancybox" href="images/gallery/img_gallery_4.jpg" data-fancybox-group="gallery" title="church image gallery"> <img src="images/gallery/thumb/gallery_thumb_4.jpg" class="img-responsive" width="270" height="270" alt="church image gallery"> </a> </div>
-    <div class="col-sm-4 col-md-3"> <a class="fancybox" href="images/gallery/img_gallery_5.jpg" data-fancybox-group="gallery" title="church image gallery"> <img src="images/gallery/thumb/gallery_thumb_5.jpg" class="img-responsive" width="270" height="270" alt="church image gallery"> </a> </div>
-    <div class="col-sm-4 col-md-3"> <a class="fancybox" href="images/gallery/img_gallery_6.jpg" data-fancybox-group="gallery" title="church image gallery"> <img src="images/gallery/thumb/gallery_thumb_6.jpg" class="img-responsive" width="270" height="270" alt="church image gallery"> </a> </div>
-    <div class="col-sm-4 col-md-3"> <a class="fancybox" href="images/gallery/img_gallery_7.jpg" data-fancybox-group="gallery" title="church image gallery"> <img src="images/gallery/thumb/gallery_thumb_7.jpg" class="img-responsive" width="270" height="270" alt="church image gallery"> </a> </div>
-    <div class="col-sm-4 col-md-3"> <a class="fancybox" href="images/gallery/img_gallery_8.jpg" data-fancybox-group="gallery" title="church image gallery"> <img src="images/gallery/thumb/gallery_thumb_8.jpg" class="img-responsive" width="270" height="270" alt="church image gallery"> </a> </div>
+    <?php
+
+      $allPhotos = $call->gallery();
+
+      while($photos = $allPhotos->fetch(PDO::FETCH_ASSOC))
+      {
+
+    ?>
+    <div class="col-sm-4 col-md-3"> <a class="fancybox" href="images/gallery/<?= $photos['title']; ?>.<?= $photos['ext']; ?>" data-fancybox-group="gallery" title="<?= $photos['title']; ?>"> <img src="images/gallery/<?= $photos['title']; ?>.<?= $photos['ext']; ?>" class="img-responsive" width="270" height="270" alt="<?= $photos['title']; ?>"> </a> </div>
+    <?php 
+      }
+    ?>
   </div>
 </div>
 <!--// END OUR GALLERY --> 
 
 <!-- BIBLE QUOTES -->
-<div class="highlight-bg has-margin-bottom">
+<div id="quotes" class="quotes has-margin-bottom">
   <div class="container event-list">
     <div class="row">
       <div class="col-md-12">
-        <div class="owl-carousel2">
+        <div class="owl-carousel2 quotes-carousel">
+          <?php
+
+              $focus = $call->focus();
+
+              $focus = $focus->fetch(PDO::FETCH_ASSOC);
+
+            ?>
           <div class="item">
-            <div class="section-title">
+            <div class="section-title" style="color: white; font-weight: bold;">
               <h4> FOCUS FOR THE MONTH </h4>
             </div>
-            <blockquote class="blockquote-centered">
-                Spirituality and Diversity
-                <small>Ephesians 4 : 12</small>
+            <blockquote class="quote-item blockquote-centered">
+                <?= $focus['theme']; ?>
+                <small style="color: white;"><?= $focus['script']; ?></small>
                 <a class="btn btn-primary" href="focus_for_the_month.php" role="button">Read More →</a> 
             </blockquote>
           </div>
+            <?php
+
+              $allQuotes = $call->quotes();
+              
+              while($quote = $allQuotes->fetch(PDO::FETCH_ASSOC))
+              {
+
+            ?>
           <div class="item">
-            <div class="section-title">
+            <div class="section-title" style="color: white; font-weight: bold;">
               <h4> QUOTES </h4>
             </div>
-            <blockquote class="blockquote-centered"> For God so loved the world that he gave his one and only begotten Son, that who ever believes in him shall not perish but have eternal life. <small>John 3:16 (KJV)</small> </blockquote>
+            <blockquote class="quote-item blockquote-centered"> <?= $quote['details']; ?> <small style="color: white;"><?= $quote['author']; ?></small> </blockquote>
           </div>
-          <div class="item">
-            <div class="section-title">
-              <h4> QUOTES </h4>
-            </div>
-            <blockquote class="blockquote-centered"> For if, by the trespass of the one man, death reigned through that one man, how much more will those who receive God's abundant provision of grace!
- <small>Romans 5:17 (NIV)</small> </blockquote>
-          </div>
-          <div class="item">
-            <div class="section-title">
-              <h4> QUOTES </h4>
-            </div>
-            <blockquote class="blockquote-centered">For God did not send his Son into the world to condemn the world, but to save the world through him. <small>John 3:17</small> </blockquote>
-          </div>
+          <?php
+              }
+          ?>
         </div>
       </div>
     </div>
@@ -370,24 +459,35 @@
     <h4> TESTIMONIES </h4>
   </div>
   <div class="row feature-block">
-    <div class="col-md-4 col-sm-6 has-margin-bottom"> <img class="img-responsive" src="images/ministry_1.jpg" alt="catholic church">
-      <h5>YOU CANNOT, BUT GOD CAN</h5>
-      <p>The world says that blood and sweat equals success. But we can rest in Jesus' finished work at the cross because of His blood, sweat, tears... </p>
-      <p><a href="ministry.php" role="button">Read more →</a></p>
+    <?php
+      function month($date)
+      {
+        $array = explode(',', $date);
+        $month = $array[1];
+        return $month;
+      }
+
+      function year($date)
+      {
+        $array = explode(' ', $date);
+        $year = end($array);
+        return $year;
+      }
+
+      $last3Testimonies = $call->testimonies();
+
+      while($testimonies = $last3Testimonies->fetch(PDO::FETCH_ASSOC))
+      {
+
+    ?>
+    <div class="col-md-4 col-sm-6 has-margin-bottom">
+      <h5><?= $testimonies['title']; ?></h5>
+      <p>---<?= $testimonies['testifier']; ?>&nbsp; &nbsp; posted on <span class="link-reverse"><?= $testimonies['date_added']; ?></span></p>
+      <p class='text-justify'> <?= truncate2($testimonies['details']); ?> </p>
+      <p><a href="testimony.php?page=1&pages=5&month=<?= month($testimonies['date_added']); ?>&year=<?= year($testimonies['date_added']); ?>" role="button">Read more →</a></p>
     </div>
+      <?php } ?>
     <!-- /.col-md-4 -->
-    <div class="col-md-4 col-sm-6 has-margin-bottom"> <img class="img-responsive" src="images/ministry_2.jpg" alt="ministry sermon">
-      <h5>DELIGHT YOURSELF IN LORD</h5>
-      <p>When we rest in the Lord and draw from His Word every day, we have the confidence in knowing our Father has already opened doors...</p>
-      <p><a href="ministry.php" role="button">Read more →</a></p>
-    </div>
-    <!-- /.col-md-4 -->
-    <div class="col-md-4 col-sm-8 col-sm-offset-2 col-md-offset-0 center-this has-margin-bottom"> <img class="img-responsive" src="images/ministry_3.jpg" alt="bulletin programs">
-      <h5>FAITH DEVELOPS PERSEREVANCE</h5>
-      <p>Through these he has given us his very great and precious promises, so that through them you may participate in the divine nature...</p>
-      <p><a href="ministry.php" role="button">Read more →</a></p>
-    </div>
-    <!-- /.col-md-4 --> 
   </div>
 </div>
 <!-- // END OUR MINISTRIES--> 

@@ -58,20 +58,20 @@
 
         if($checker = $stmt->execute())
         {
-            echo    '<div class="alert alert-success alert-dismissable mt-2" style="margin-right: 10%; margin-top: 10px; margin-bottom: 0px; margin-left: 10%;">'.
+            echo    '<div class="alert alert-danger alert-dismissable mt-2" style="margin-right: 10%; margin-top: 10px; margin-bottom: 0px; margin-left: 10%;">'.
                         '<button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>'.
                         '<div class="">'.
-                            '<p><i class="fa fa-check"></i>&nbsp;&nbsp;&nbsp; Payment successfull but unable to save your record'.
+                            '<p><i class="fa fa-check"></i>&nbsp;&nbsp;&nbsp; Payment successfull'.
                             '</p>'.
                         '</div>'.
                     '</div>';
         }
         else
         {
-            echo    '<div class="alert alert-danger alert-dismissable mt-2" style="margin-right: 10%; margin-top: 10px; margin-bottom: 0px; margin-left: 10%;">'.
+            echo    '<div class="alert alert-success alert-dismissable mt-2" style="margin-right: 10%; margin-top: 10px; margin-bottom: 0px; margin-left: 10%;">'.
                         '<button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>'.
                         '<div class="">'.
-                            '<p><i class="fa fa-check"></i>&nbsp;&nbsp;&nbsp; Payment successfull'.
+                            '<p><i class="fa fa-check"></i>&nbsp;&nbsp;&nbsp; Payment successfull but unable to save your record'.
                             '</p>'.
                         '</div>'.
                     '</div>';

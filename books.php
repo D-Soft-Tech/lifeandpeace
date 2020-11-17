@@ -156,6 +156,15 @@
                             '</div>';
         }  
     }
+
+    if(isset($_POST['logoutPassword']))
+    {
+
+        unset($_SESSION['username_frontEnd']);
+        unset($_SESSION['password_frontEnd']);
+        unset($_SESSION['shoppingCart']);
+
+    }
 ?>
 
 <!DOCTYPE html>
@@ -245,7 +254,7 @@ The three most essential aspect of our family are: Sound Teachings, Sweet Fellow
                 {
                     echo    '<ul class="dropdown-menu dropdown-menu-left" role="menu">'.
                                 '<li>'.
-                                '<a href="" class="mr-0 pr-0 dropdown-item" data-toggle="modal" data-target="#loginModal"><b>Log out</b></a>'.
+                                    '<a href="#" type="button" class="mr-0 pr-0 dropdown-item logOut" name="'.$_SESSION['password_frontEnd'].'" id="'.$_SESSION['username_frontEnd'].'"><b>Log out</b></a>'.
                                 '</li>'.
                             '</ul>';
                 }
@@ -262,14 +271,38 @@ The three most essential aspect of our family are: Sound Teachings, Sweet Fellow
 </div>
 <!--// Navbar Ends--> 
 
+<style>
+    #topbar
+    {
+        background-image: url('images/bookBackground.jpg');
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-blend-mode: inherit;
+    }
+    #shadow1{
+        text-shadow:
+        3px 3px 0 #4268B3,  
+        3px 3px 0 #4268B3,
+        3px 3px 0 #4268B3,
+        3px 3px 0 #4268B3;
+    }
+    #shadow2{
+        text-shadow:
+        1px 1px 0 #4268B3,  
+        1px 1px 0 #4268B3,
+        1px 1px 0 #4268B3,
+        1px 1px 0 #4268B3;
+    }
+</style>
 <?php
   include_once 'life/php/indexpage.php';
 ?>
 
-    <div class="subpage-head">
-        <div class="container">
-            <h3>Our Books</h3>
-            <p class="lead">Here are some books authored by our father in the Lord, Apostle Gbade Olorire to help your spiritual growth.</p>
+    <div class="subpage-head" id="topbar">
+        <div class="container" style="color: #fff; font-weight: bold;">
+            <h3><span style="color: #fff;" id="shadow1">Our Books</span></h3>
+            <p class="lead" id="shadow2">Here are some books authored by our father in the Lord, Apostle Gbade Olorire to help your spiritual growth.</p>
         </div>
     </div>
 
@@ -320,14 +353,14 @@ The three most essential aspect of our family are: Sound Teachings, Sweet Fellow
                                     <input type="text" name="addToCartBookTitle" value="<?= $books['book_title']; ?>" hidden>
                                     <button type="submit" class="btn btn-secondary" name="submitAddToCart" value="submitAddToCart" title="Add to Cart"><i class="fas fa-shopping-cart"></i></button>
                                 </form>
-                                <button class="btn btn-secondary" title="Buy now"><a href="bookDetails.php?book_id=<?= $books['book_id']; ?>&book_description=<?= $books['book_description'];?>&book_price=<?= $books['price'];?>&book_volume=<?= $books['volume'];?>&book_page=<?= $books['page_count'];?>&book_title=<?= $books['book_title'];?>&book_ext1=<?= $books['ext'];?>&book_ext2=<?= $books['ext2'];?>"><i class="fas fa-eye"></i></a></button>
+                                <button class="btn btn-secondary" title="View details"><a href="bookDetails.php?book_id=<?= $books['book_id']; ?>&book_description=<?= $books['book_description'];?>&book_price=<?= $books['price'];?>&book_volume=<?= $books['volume'];?>&book_page=<?= $books['page_count'];?>&book_title=<?= $books['book_title'];?>&book_ext1=<?= $books['ext'];?>&book_ext2=<?= $books['ext2'];?>"><i class="fas fa-eye"></i></a></button>
                             </div>
                         </div>
                     </div>
                     <div class="col-md-10 col-xs-8 ml-3">
                         <h5 class=""><?= $books['book_title']; ?></h5>
                         <p class="card-text text-justify">
-                        <?= $books['book_description']; ?> <a href="bookDetails.php?book_id=<?= $books['book_id']; ?>&book_description=<?= $books['book_description'];?>&book_price=<?= $books['price'];?>&book_volume=<?= $books['volume'];?>&book_page=<?= $books['page_count'];?>&book_title=<?= $books['book_title'];?>&book_ext1=<?= $books['ext'];?>&book_ext2=<?= $books['ext2'];?>">&nbsp;Read more →</a>
+                            <?= $books['book_description']; ?> <a href="bookDetails.php?book_id=<?= $books['book_id']; ?>&book_description=<?= $books['book_description'];?>&book_price=<?= $books['price'];?>&book_volume=<?= $books['volume'];?>&book_page=<?= $books['page_count'];?>&book_title=<?= $books['book_title'];?>&book_ext1=<?= $books['ext'];?>&book_ext2=<?= $books['ext2'];?>">&nbsp;Read more →</a>
                         </p>
                     </div>
                     <hr class="">
@@ -351,36 +384,22 @@ The three most essential aspect of our family are: Sound Teachings, Sweet Fellow
                             <form action="books.php" method="post"><input type="submit" class="btn btn-success" title="Pay for Cart" name="payCart" value="pay"></form>
                         </div>
                     </div>
-                    <br />
-                    <div>
-                        <div class="blog-search has-margin-xs-bottom">
-                            <div class="input-group input-group-lg">
-                                <input type="text" class="form-control" placeholder="Search..">
-                                <span class="input-group-btn">
-                                    <button class="btn btn-default" type="button"><i class="glyphicon glyphicon-search glyphicon-lg"></i></button>
-                                </span> 
-                            </div>
-                        </div>
-                    </div>
+
                     <h6>New Arrivals</h6> 
-                    <a href="#" class="list-group-item">
-                        <p class="list-group-item-heading">Heavens and the earth Heavens and the earth</p>
-                    </a>
-                    <a href="#" class="list-group-item">
-                        <p class="list-group-item-heading">Heavens and the earth</p>
-                    </a>
-                    <a href="#" class="list-group-item">
-                        <p class="list-group-item-heading">Heavens and the earth</p>
-                    </a>
-                    <a href="#" class="list-group-item">
-                        <p class="list-group-item-heading">Heavens and the earth</p>
-                    </a>
-                    <a href="#" class="list-group-item">
-                        <p class="list-group-item-heading">Heavens and the earth</p>
-                    </a>
-                    <a href="#" class="list-group-item">
-                        <p class="list-group-item-heading">Heavens and the earth</p>
-                    </a>
+                    <?php
+
+                        $sql = "SELECT * FROM books ORDER BY book_id DESC LIMIT 10";
+
+                        $stmt = $conn->prepare($sql);
+                        $stmt->execute();
+
+                        while($lastTenBooks = $stmt->fetch())
+                        {
+                    ?>
+                        <a href="bookDetails.php?book_id=<?= $lastTenBooks['book_id']; ?>&book_description=<?= $lastTenBooks['book_description'];?>&book_price=<?= $lastTenBooks['price'];?>&book_volume=<?= $lastTenBooks['volume'];?>&book_page=<?= $lastTenBooks['page_count'];?>&book_title=<?= $lastTenBooks['book_title'];?>&book_ext1=<?= $lastTenBooks['ext'];?>&book_ext2=<?= $lastTenBooks['ext2'];?>" class="list-group-item">
+                            <p class="list-group-item-heading"><?= $lastTenBooks['book_title']; ?></p>
+                        </a>
+                    <?php } ?>
                 </div>
             </div>
         </dvi>

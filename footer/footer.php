@@ -1,24 +1,3 @@
-<!-- SUBSCRIBE -->
-<div class="highlight-bg">
-  <div class="container">
-    <div class="row">
-      <form action="subscribe.php" method="post" class="form subscribe-form" role="form" id="subscribeForm">
-        <div class="form-group col-md-3 hidden-sm">
-          <h5 class="susbcribe-head"> SUBSCRIBE <span>TO OUR NEWSLETTER</span></h5>
-        </div>
-        <div class="form-group col-sm-8 col-md-6">
-          <label class="sr-only">Email address</label>
-          <input type="email" class="form-control input-lg" placeholder="Enter email" name="email" id="address" data-validate="validate(required, email)" required>
-          <span class="help-block" id="result"></span> </div>
-        <div class="form-group col-sm-4 col-md-3">
-          <button type="submit" class="btn btn-lg btn-primary btn-block">Subscribe Now →</button>
-        </div>
-      </form>
-    </div>
-  </div>
-</div>
-<!-- END SUBSCRIBE --> 
-
 <!-- FOOTER -->
 <footer>
   <div class="container">
@@ -96,6 +75,7 @@
 <!-- Bootstrap core JavaScript
 ================================================== --> 
 <!-- Placed at the end of the document so the pages load faster --> 
+<script src="js/aos/aos.js"></script>
 <script src="js/jquery.js"></script> 
 <script src="js/bootstrap.min.js"></script>
 <script src="assets/fontawesomeForWeb/js/all.js"></script>
@@ -194,13 +174,3 @@
 <script>
   $('[data-toggle="tooltip"]').tooltip({boundary: 'window'});
 </script>
-<?php
-  if(isset($_GET['logoutPassword']))
-  {
-    // unset($_SESSION);
-
-    echo "good";
-  }else{echo "hmmm";}
-
-  // && isset($_POST['logoutPassword']) && in_array($_POST['logoutUsername'], $_SESSION) === true && in_array($_POST['logoutPassword'], $_SESSION) === true
-?>

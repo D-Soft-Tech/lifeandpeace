@@ -52,8 +52,10 @@
                     <div class="widget-heading">
                     <?php
                         $monthNow = date('F');
+                        $yearNow = date('Y');
+
                         $bookSales = $conn->query("SELECT sum(amount) AS 
-                        amount, COUNT(amount) AS downloads FROM transactions WHERE purpose = 'books' && month = '$monthNow'");
+                        amount, COUNT(amount) AS downloads FROM transactions WHERE purpose = 'books' && month = '$monthNow' && year = '$yearNow'");
                         $bookSales = $bookSales->fetch();
                     ?>
                         Books
@@ -90,8 +92,10 @@
                 <div class="widget-content-left">
                     <?php
                         $monthNow = date('F');
+                        $yearNow = date('Y');
+
                         $tithes = $conn->query("SELECT sum(amount) AS 
-                        amount FROM transactions WHERE purpose = 'tithe' && month = '$monthNow'");
+                        amount FROM transactions WHERE purpose = 'tithe' && month = '$monthNow' && year = '$yearNow'");
                         $tithes = $tithes->fetch();
                     ?>
                     <div class="widget-heading">
@@ -102,8 +106,10 @@
                         <div class="widget-content-left">
                             <?php
                                 $monthNow = date('F');
+                                $yearNow = date('Y');
+
                                 $offerings = $conn->query("SELECT sum(amount) AS 
-                                amount FROM transactions WHERE purpose = 'offering' && month = '$monthNow'");
+                                amount FROM transactions WHERE purpose = 'offering' && month = '$monthNow' && year = '$yearNow'");
                                 $offerings = $offerings->fetch();
                             ?>
                             <div class="widget-heading">
@@ -205,21 +211,27 @@
             </div>
         </div>
     </div>
-
     <div class="col-md-6 col-xl-6 col-xs-12">
         <div class="card mb-3 widget-content">
             <div class="widget-content-outer">
                 <div class="widget-content-wrapper">
                     <div class="widget-content-left">
-                        <div class="widget-heading">Trending Quote</div>
+                        <div class="widget-heading">Personal Pledge</div>
                         <div class="widget-subheading">
-                            Posted by <span id="author">Pastor Tosin</span> On <span id="date_posted">22nd of May</span>
+                            <?php
+
+                                $monthNow = date('F');
+                                $yearNow = date('Y');
+
+                                $personalPledge = $conn->query("SELECT sum(amount) AS 
+                                amount FROM transactions WHERE purpose = 'personalPledge' && month = '$monthNow' && year = '$yearNow'");
+                                $personalPledge = $personalPledge->fetch();
+
+                            ?>
                         </div>
                     </div>
                     <div class="widget-content-right">
-                        <div class="widget-numbers text-success">
-                            60 Likes
-                        </div>
+                        <div class="widget-numbers text-warning"><?= '#' . number_format($personalPledge['amount']); ?></div>
                     </div>
                 </div>
             </div>
@@ -231,10 +243,19 @@
                 <div class="widget-content-wrapper">
                     <div class="widget-content-left">
                         <div class="widget-heading">Top Audio Download</div>
-                        <div class="widget-subheading">Spirituality and Diversity</div>
+                        <div class="widget-subheading">
+                            <?php
+
+                                $audioDownloadCount = "SELECT item, COUNT(*) AS num FROM `downloads` WHERE item != 'books' GROUP BY item ORDER BY num DESC LIMIT 0,1 ";
+                                $audioDownloadCount = $conn->query($audioDownloadCount);
+                                $audioDownloadCount = $audioDownloadCount->fetch();
+                                
+                                echo $audioDownloadCount['item'];
+                            ?>
+                        </div>
                     </div>
                     <div class="widget-content-right">
-                        <div class="widget-numbers text-warning">3k downloads</div>
+                        <div class="widget-numbers text-warning"><?= number_format($audioDownloadCount['num']); ?></div>
                     </div>
                 </div>
             </div>

@@ -105,7 +105,7 @@
         public function gallery()
         {
             $sql = "
-                        SELECT * FROM gallery ORDER BY gallery_id DESC LIMIT 8
+                        SELECT * FROM gallery ORDER BY id DESC LIMIT 8
                     ";
 
             $gallery = $this->conn->query($sql);
@@ -114,11 +114,39 @@
 
         public function quotes(){
             $sql = "
-                        SELECT * FROM quote ORDER BY quote_id DESC LIMIT 10
+                        SELECT * FROM quote ORDER BY quote_id DESC
                     ";
 
-            $quotes = $this->query($sql);
+            $quotes = $this->conn->query($sql);
             return $quotes;
+        }
+
+        public function focus(){
+            $sql = "
+                        SELECT * FROM focus
+                    ";
+
+            $focus = $this->conn->query($sql);
+            return $focus;
+        }
+
+        public function testimonies(){
+            $sql = "
+                        SELECT testimonies.*, users.full_name AS testifier FROM testimonies, users WHERE testimonies.user_id = users.user_id && testimonies.status = 'read' ORDER BY testimonies.id DESC LIMIT 3
+                    ";
+
+            $testimonies = $this->conn->query($sql);
+            return $testimonies;
+        }
+
+        public function recent_sermons()
+        {
+            $sql_RecentSermons = "
+                              SELECT * FROM message WHERE type = 'audio' ORDER BY id DESC LIMIT 5
+                            ";
+
+            $stmtRecentSermons = $this->conn->query($sql_RecentSermons);
+            return $stmtRecentSermons;
         }
 
         public function db_conn()

@@ -163,9 +163,12 @@
             }
         );
     }
-
-    setInterval("inbox('contacts', 'contact')", 1000);
-    setInterval("inbox('articles', 'article')", 1000);
-    setInterval("inbox('quote', 'quote')", 1000);
-    setInterval("inbox('testimonies', 'testimonies')", 1000);
+    setTimeout("inbox('contacts', 'contact')", 1000);
+    setInterval("inbox('contacts', 'contact')", 180000);
+    setTimeout("inbox('articles', 'article')", 1000);
+    setInterval("inbox('articles', 'article')", 180000);
+    setTimeout("inbox('quote', 'quote')", 1000);
+    setInterval("inbox('quote', 'quote')", 180000);
+    setTimeout("inbox('testimonies', 'testimonies')", 1000);
+    setInterval("inbox('testimonies', 'testimonies')", 180000);
 </script>

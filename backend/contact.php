@@ -481,17 +481,32 @@
                                                             } 
                                                             else 
                                                             {
-                                                            // Check if the "Sender's Email" input field is filled out
-                                                            $subject = $_POST['title'];
-                                                            $message = $_POST['details'];
+                                                                $subject = $_POST['title'];
+                                                                $subject = $_POST['to'];
+                                                                $message = $_POST['details'];
 
+                                                                require_once 'assets\PHPMailer\src\PHPMailer.php'; //download the phpmailer class 
+                                                                // require_once 'assets\PHPMailer\src\SMTP.php';
+                                                                // require_once 'assets\PHPMailer\src\POP3.php';
+                                                                // require_once 'assets\PHPMailer\src\OAuth.php';
+                                                                // require_once 'assets\PHPMailer\src\Exception.php';
 
-                                                            $headers =  'From: lifeandpeace@gmail.com'; // Sender's Email
-                                                            
-                                                            // Message lines should not exceed 70 characters (PHP rule), so wrap it
-                                                            $message = wordwrap($message, 70);
-                                                            // Send Mail By PHP Mail Function
-                                                                if(mail("oloyedeadebayoolawale@gmail.com", $subject, $message, $headers)){
+                                                                $mail = new PHPMailer;
+                                                                $mail->IsSmtp();
+                                                                $mail->SMTPDebug = 0;
+                                                                $mail->Host = 'smtp.gmail.com';
+                                                                $mail->Port = '465';
+                                                                $mail->SMTPAuth = 'true';
+                                                                $mail->Username = 'oloyedeadebayoolawale@gmail.com';
+                                                                $mail->Password = 'oloyede12345678910';
+                                                                $mail->SMTPSecure = 'ssl';
+                                                                $mail->From = 'lifeandpeacecommission.gmail.com';
+                                                                $mail->AddAddress("$to", 'Name');
+                                                                $mail->WordWrap = 70;
+                                                                $mail->Subject = $subject;
+                                                                $mail->Body = $message;
+
+                                                                if($mail->Send()){
                                                                     $result = '<div class="alert alert-success alert-dismissable" id="flash-msg">
                                                                                     <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
                                                                                     <h4><i class="icon fa fa-pe-7s-check"></i> Success, Your response has been sent </h4>
@@ -500,11 +515,10 @@
                                                                     $result = '<div class="alert alert-danger alert-dismissable" id="flash-msg">
                                                                                     <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
                                                                                     <h5><i class="icon fa fa-pe-7s-attention"></i> Error sending the email, 
-                                                                                    this could be due to server not responding, please try again later</h5>
+                                                                                    this could be due to network, please try again later</h5>
                                                                                 </div>';
-
-                                                                        result($result);
                                                                 }
+                                                                result($result);
                                                             }
                                                     }
                                                         ?>

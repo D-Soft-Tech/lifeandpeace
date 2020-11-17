@@ -29,6 +29,7 @@
                                 </h6>
                             </label>
                             <input type="text" name="title" id="exampleEmail" placeholder="(optional)" class="form-control">
+                            <input type="text" name="to" value="'.$email.'" id="exampleEmail" placeholder="(optional)" class="form-control">
                         </div>            
                         <div class="position-relative form-group">
                             <label for="exampleText" class="">

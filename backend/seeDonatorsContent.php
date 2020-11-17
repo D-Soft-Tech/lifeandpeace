@@ -49,7 +49,8 @@
                             <th class="text-center">Name</th>
                             <th class="text-center">Address</th>
                             <th class="text-center">Amount</th>
-                            <th class="text-center">Date & Time</th>
+                            <th class="text-center">Date</th>
+                            <th class="text-center">Time</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -74,7 +75,16 @@
                                         </div>
                                     </div>
                                 </td>
-                                <td class="text-center"><?= $donators['transc_time']; ?></td>
+                                <td class="text-center"><?= $donators['day']. $donators['month']. ', ' . $donators['year']; ?></td>
+                                <td>
+                                    <div class="widget-content p-0">
+                                        <div class="widget-content-wrapper">
+                                            <div class="widget-content-left flex2">
+                                                <div class="widget-heading text-center"><?= $donators['transc_time']; ?></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
                             </tr>
                         <?php endforeach; ?>
                     </tbody>

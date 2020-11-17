@@ -33,6 +33,17 @@
             $userResources = $stmt1->execute();
 
             $userDetails = $stmt1->fetch();
+
+            //getting the api_key to use
+            $api =  "
+                        SELECT api_key FROM account WHERE purpose = :book
+                    ";
+
+            $stmt = $conn->prepare($api);
+            $stmt->bindValue(':book', 'book');
+            $stmt->execute();
+
+            $api_key = $stmt->fetch();
             
             include_once 'header/header2.php';
             include_once 'life/php/indexpage.php';
@@ -126,36 +137,21 @@
                                 <h4> Book Archive </h4>
                             </div>
                             <div class="list-group">
-                                <div>
-                                    <div class="blog-search has-margin-xs-bottom">
-                                        <div class="input-group input-group-lg">
-                                            <input type="text" class="form-control" placeholder="Search..">
-                                            <span class="input-group-btn">
-                                                <button class="btn btn-default" type="button"><i class="glyphicon glyphicon-search glyphicon-lg"></i></button>
-                                            </span>
-                                        </div>
-                                    </div>
-                                    <div id="book_search"></div>
-                                </div>
                                 <h6>New Arrivals</h6> 
-                                <a href="#" class="list-group-item">
-                                    <p class="list-group-item-heading">Heavens and the earth Heavens and the earth</p>
-                                </a>
-                                <a href="#" class="list-group-item">
-                                    <p class="list-group-item-heading">Heavens and the earth</p>
-                                </a>
-                                <a href="#" class="list-group-item">
-                                    <p class="list-group-item-heading">Heavens and the earth</p>
-                                </a>
-                                <a href="#" class="list-group-item">
-                                    <p class="list-group-item-heading">Heavens and the earth</p>
-                                </a>
-                                <a href="#" class="list-group-item">
-                                    <p class="list-group-item-heading">Heavens and the earth</p>
-                                </a>
-                                <a href="#" class="list-group-item">
-                                    <p class="list-group-item-heading">Heavens and the earth</p>
-                                </a>
+                                <?php
+
+                                    $sql = "SELECT * FROM books ORDER BY book_id DESC LIMIT 10";
+
+                                    $stmt = $conn->prepare($sql);
+                                    $stmt->execute();
+
+                                    while($lastTenBooks = $stmt->fetch())
+                                    {
+                                ?>
+                                    <a href="bookDetails.php?book_id=<?= $lastTenBooks['book_id']; ?>&book_description=<?= $lastTenBooks['book_description'];?>&book_price=<?= $lastTenBooks['price'];?>&book_volume=<?= $lastTenBooks['volume'];?>&book_page=<?= $lastTenBooks['page_count'];?>&book_title=<?= $lastTenBooks['book_title'];?>&book_ext1=<?= $lastTenBooks['ext'];?>&book_ext2=<?= $lastTenBooks['ext2'];?>" class="list-group-item">
+                                        <p class="list-group-item-heading"><?= $lastTenBooks['book_title']; ?></p>
+                                    </a>
+                                <?php } ?>
                             </div>
                         </div>
                     </dvi>
@@ -171,7 +167,7 @@
             function payWithPaystack()
             {
                 var handler = PaystackPop.setup({
-                    key: 'pk_test_e1de14e19e0aee0cd1169fbe1a5d52de0c3d633a',
+                    key: '<?= $api_key['api_key']; ?>',
                     email: '<?= $_SESSION['email_frontEnd'];?>',
                     amount: '<?= $total*100; ?>',
                     currency: "NGN", 

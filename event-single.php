@@ -15,10 +15,26 @@ if(isset($_GET) && !empty($_GET))
 if(!empty($theme) && !empty($details) && !empty($from))
 {
 ?>
-  <div class="subpage-head" style="margin-bottom: 20px;">
-  <div class="container">
-    <h3><?= $theme; ?></h3>
-    <p class="lead"><?= $from; ?></p>
+<style>
+  #topbar
+  {
+    background-image: url('images/program.jpg');
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-blend-mode: inherit;
+    text-shadow:
+      1px 1px 0 #4268B3,  
+      1px 1px 0 #4268B3,
+      1px 1px 0 #4268B3,
+      1px 1px 0 #4268B3;
+  }
+</style>
+
+  <div class="subpage-head" id="topbar" style="margin-bottom: 20px;">
+  <div class="container" style="color: #fff; font-weight: bold;">
+    <h3><span style="color: #fff;"><?= $theme; ?></span></h3>
+    <p class="lead" style="font-size: 1.6em;"><?= $from; ?></p>
   </div>
 </div>
 

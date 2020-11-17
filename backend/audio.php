@@ -378,7 +378,30 @@
                                             <div id="maincontent">
 
                                                 <?php
+                                                    function audio_downloads($id, $name)
+                                                    {
+                                                        global $conn;
 
+                                                        $checker = $conn->prepare("SELECT item_id, item FROM downloads WHERE item_id = :id && item = :item && item != 'books'");
+                                                        $checker->bindParam(':id', $id);
+                                                        $checker->bindParam(':item', $name);
+                                                        $checker->execute();
+
+                                                        if($checker->rowCount() > 0)
+                                                        {
+                                                            $audioDownloadCount = "SELECT item, COUNT(*) AS num FROM `downloads` WHERE item != 'books' && item_id = $id GROUP BY item";
+                                                            $audioDownloadCount = $conn->query($audioDownloadCount);
+                                                            $audioDownloadCount = $audioDownloadCount->fetch();
+                                                            
+                                                            return $audioDownloadCount['num'];
+                                                        }
+                                                        else
+                                                        {
+                                                            return 0;
+                                                        }
+                                                        
+                                                    }
+                                                    
                                                     function get_month(){
                                                         if (isset($_POST['month']) && $_POST['month'] !== "") {
                                                             return $_POST['month'];

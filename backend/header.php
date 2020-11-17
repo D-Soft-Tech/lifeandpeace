@@ -8,7 +8,7 @@
         }
     }
 
-    if(isset($_POST['logout'])){
+    if(isset($_GET['logout'])){
         unset($_SESSION['username']);
         unset($_SESSION['password']);
         header('Location: index.php');
@@ -65,13 +65,13 @@
                                 <div class="widget-content-left">
                                     <div class="btn-group">
                                         <a data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="p-0 btn">
-                                            <img width="42" class="rounded-circle" src="assets/images/avatars/1.jpg" alt="">
+                                            <img width="42" class="rounded-circle" src="assets/images/avatars/userAvatar.png" alt="">
                                             <i class="fa fa-angle-down ml-2 opacity-8"></i>
                                         </a>
                                         <div tabindex="-1" role="menu" aria-hidden="true" class="dropdown-menu dropdown-menu-right">
                                             <button type="button" tabindex="0" data-toggle="modal" class="dropdown-item" data-target="#staticBackdrop" <?php disabledButton(); ?>>Add Admins</button>
                                             <button type="button" tabindex="0" class="dropdown-item" <?php disabledButton(); ?>><a class="text-dark" href="admin.php">Manage Admins</a></button>
-                                            <button tabindex="0" data-toggle="modal" data-target="#logoutModal" class="dropdown-item">Log out</button>
+                                            <button tabindex="0" class="dropdown-item"><form method="get"><input type="text" name='logout' value='logout' hidden> <input type="submit" value=' Log out'></form></button>
                                         </div>
                                     </div>
                                 </div>
@@ -87,35 +87,6 @@
             </div>
         </div>
 
-        <!-- Warning Modal before deleting a contact message -->
-        <!-- <div class="modal fade bd-example-modal-lg mt-5" id="logoutModal" role="dialog" data-backdrop="false">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                <div class="modal-header text-danger">
-                    <h5 class="modal-title">
-                        Warning <i class="icon fa pe-7s-attention"></i> 
-                    </h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <div class="position-relative">
-                        <p>
-                            <h6 class="text-center">Are you sure you want to logout?</h6>
-                        </p>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button class="mr-5 btn-transition btn btn-outline-success" data-dismiss="modal">
-                        Cancel
-                    </button>
-                    <button type="submit" id="" name="logout" value="logout"class="mr-5 btn-transition btn btn-outline-danger finalAccountDelete" data-dismiss="modal">
-                        Yes, Proceed
-                    </button>
-                </div>
-            </div>
-        </div> -->
         <!-- Warning Modal before deleting a contact message -->
 
         <!-- Modal to add Admin user -->

@@ -422,7 +422,7 @@
                                                     }
                                                 }
 
-                                                $limit = 4;
+                                                $limit = 10;
                                                 $page = 1;
 
                                                 function page(){

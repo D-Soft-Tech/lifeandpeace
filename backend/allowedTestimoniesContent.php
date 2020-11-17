@@ -121,7 +121,7 @@
             }
         );
     }
-
-    setInterval("allowedTesti('allowedTesti', 'allowedTesti')", 300);
+    setTimeout("allowedTesti('allowedTesti', 'allowedTesti')", 1000);
+    setInterval("allowedTesti('allowedTesti', 'allowedTesti')", 180000);
 
 </script>

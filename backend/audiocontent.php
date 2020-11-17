@@ -178,7 +178,7 @@
                             <h6 class="text-info"><?= $audios['title']; ?></h6>
                         </div>
                         <div class="col-md-12">
-                            <h6 class="">Downloads: <span class="text-success">120</span></h6>
+                            <h6 class="">Downloads: <span class="text-success"><?= number_format(audio_downloads($audios['id'], $audios['title'])); ?></span></h6>
                         </div>
                     </div>
                 </div>

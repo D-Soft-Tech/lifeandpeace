@@ -118,11 +118,28 @@
     {
     ?>
       <!--SUBPAGE HEAD-->
+      <style>
+        #topbar
+        {
+          background-image: url('images/blog.png');
+          background-attachment: fixed;
+          background-repeat: no-repeat;
+          background-size: cover;
+          background-blend-mode: inherit;
+        }
+        #shadow{
+          text-shadow:
+            3px 3px 0 #000,  
+            3px 3px 0 #000,
+            3px 3px 0 #000,
+            3px 3px 0 #000;
+        }
+      </style>
 
-      <div class="subpage-head has-margin-bottom">
-        <div class="container">
-          <h3><?= $article['article_title'] ?> </h3>
-          <p class="lead">Posted on <?= $article['date_added'] ?> by <a class="link-reverse"><?= $article['article_author']; ?></a></p>
+      <div class="subpage-head has-margin-bottom" id="topbar">
+        <div class="container" style="color: #fff; font-weight: bold; font-size: 2em;">
+          <h3><span id="shadow" style="color: #fff; font-size: 1.5em;"><?= $article['article_title'] ?></span></h3>
+          <p class="lead" id="shadow" style="font-size: 0.7em;"><span>Posted on</span> <?= $article['date_added'] ?><a style="color: #fff; text-shadow: 2px 2px 0 #000;"> by <?= $article['article_author']; ?></a></p>
         </div>
       </div>
 
