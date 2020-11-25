@@ -75,7 +75,7 @@
         <div class="row">
           <div class="col-md-8 has-margin-bottom">
             <article class="blog-content">
-              <img src="images/donation/<?= $donations['title']; ?>.<?= $donations['ext']; ?>" alt="charity donation" class="img-responsive has-margin-xs-bottom" style="width: 100%;">
+              <img data-src="images/donation/<?= $donations['title']; ?>.<?= $donations['ext']; ?>" alt="charity donation" class="img-responsive has-margin-xs-bottom lazy" style="width: 100%;">
               <p class= "text-justify"><?= $donations['details']; ?></p>
             </article>
           </div>

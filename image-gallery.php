@@ -222,7 +222,7 @@
       ?>
       <div class="col-sm-4 col-md-3"> 
         <a class="fancybox" href="images/gallery/<?= $gallery['title']; ?>.<?= $gallery['ext']; ?>" data-fancybox-group="gallery" title="<?= $gallery['title']; ?>">
-          <img src="images/gallery/<?= $gallery['title']; ?>.<?= $gallery['ext']; ?>" class="img-responsive" width="270" height="270" alt="<?= $gallery['title']; ?>">
+          <img data-src="images/gallery/<?= $gallery['title']; ?>.<?= $gallery['ext']; ?>" class="img-responsive lazy" width="270" height="270" alt="<?= $gallery['title']; ?>">
         </a>
       </div>
       <?php

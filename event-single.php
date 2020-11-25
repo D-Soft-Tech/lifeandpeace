@@ -44,8 +44,8 @@ if(!empty($theme) && !empty($details) && !empty($from))
   <div class="row">
     <div class="col-md-9 has-margin-bottom">
       <article class="blog-content">
-        <img src="images/event/<?= $theme; ?>.<?= $ext; ?>" alt="<?= $theme; ?>"  
-        class="img-responsive has-margin-xs-bottom" />
+        <img data-src="images/event/<?= $theme; ?>.<?= $ext; ?>" alt="<?= $theme; ?>"  
+        class="img-responsive has-margin-xs-bottom lazy" />
         <p class="text-justify"><?= $details; ?></p>
       </article>
     </div>

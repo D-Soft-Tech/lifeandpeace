@@ -84,6 +84,7 @@
 <script src="js/ketchup.all.js"></script> 
 <script src="js/fancybox.js"></script>
 <script src="../assets/forala/js/froala_editor.pkgd.min.js"></script>
+<script src="assets/lazyLoader/jquery.lazy.js"></script>
 <script type="text/javascript" src="ajax_class.js"></script>
 
 <!--============== SUBSCRIBE FORM =================--> 
@@ -173,4 +174,13 @@
 
 <script>
   $('[data-toggle="tooltip"]').tooltip({boundary: 'window'});
+</script>
+
+<script>
+  $(document).ready(function() {
+    $('img.lazy').lazy({
+      threshold: 100,
+      effect: 'fadeIn'
+    });
+  });
 </script>

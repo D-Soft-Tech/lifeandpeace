@@ -155,7 +155,7 @@ The three most essential aspect of our family are: Sound Teachings, Sweet Fellow
   <div class="container">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
-      <a class="navbar-brand" href="index.php"> <img src="images/lpc.jpg" alt="church logo" class="img-responsive img-circle"></a> <h5 style="color: white;"> Life And Peace <span class="text-justify">Commission</span></h5></div>
+      <a class="navbar-brand" href="index.php"> <img data-src="images/lpc.jpg" alt="church logo" class="img-responsive img-circle lazy"></a> <h5 style="color: white;"> Life And Peace <span class="text-justify">Commission</span></h5></div>
     <div class="navbar-collapse collapse">
       <ul class="nav navbar-nav navbar-right">
         <li><a href="index.php">HOME</a></li>
@@ -259,7 +259,7 @@ The three most essential aspect of our family are: Sound Teachings, Sweet Fellow
                     <div class="col-xs-12 has-margin-bottom">
                         <div class="row">
                             <div class="col-xs-6 col-md-3 container" id="book-top" style="border-right: 2px solid;">
-                                <img src="images/books/<?= $book_title; ?>.<?= $book_ext1; ?>" style="height: 250px; width: 100%;" alt="" class="image-responsive">
+                                <img data-src="images/books/<?= $book_title; ?>.<?= $book_ext1; ?>" style="height: 250px; width: 100%;" alt="" class="image-responsive lazy">
                             </div>
                             <div class="col-xs-6 col-md-9">
                                 <div class="row">

@@ -20,3 +20,7 @@ Thursday October 8th, 2020 (4:51pm):- An uncaught error just occured
 
 Wednesday October 14th, 2020 (3:27pm):- An uncaught error just occured
 
+Tuesday November 17th, 2020 (8:07pm):- SQLSTATE[HY000] [2002] php_network_getaddresses: getaddrinfo failed: No such host is known. 
+Tuesday November 17th, 2020 (8:07pm):- SQLSTATE[HY000] [2002] php_network_getaddresses: getaddrinfo failed: No such host is known. 
+Friday November 20th, 2020 (6:11am):- SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+

@@ -253,7 +253,7 @@
   
     <section class="comments-block">
       <?php foreach($testimonies as $testimonies) :  ?>
-      <div class="media"> <a class="pull-left" href="#"> <img class="media-object" alt="avatar" src="images/avatar-2.jpg"> </a>
+      <div class="media"> <a class="pull-left" href="#"> <img class="media-object lazy" alt="avatar" data-src="images/avatar-2.jpg"> </a>
         <div class="media-body">
           <h4 class="media-heading"><?= $testimonies['title']; ?></h4>
           <p class="text-muted">Posted on <?= $testimonies['date_added']; ?> by <a class="text-danger"><?= $testimonies['full_name']; ?></a></p>

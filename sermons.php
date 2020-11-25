@@ -34,7 +34,7 @@
         <div class="section-title">
           <h4> RECENT SERMONS </h4>
         </div>
-        <a href="#"><img src="images/video-thumb.jpg" class="img-responsive center-block" alt="video thumb"></a>
+        <a href="#"><img data-src="images/video-thumb.jpg" class="img-responsive center-block lazy" alt="video thumb"></a>
         <div class="list-group"> <a href="#" class="list-group-item">
           <p class="list-group-item-heading">Heavens and the earth</p>
           <p class="list-group-item-text">24:15 mins</p>

@@ -126,7 +126,7 @@
               <h3 class="comments-head"><?= $totalComments; ?> Comments</h3>
 
               <?php foreach($comments as $comments) : ?>
-                <div class="media"> <a class="pull-left" href="#"> <img class="media-object" alt="avatar" src="images/avatar-1.jpg"> </a>
+                <div class="media"> <a class="pull-left" href="#"> <img class="media-object lazy" alt="avatar" data-src="images/avatar-1.jpg"> </a>
                   <div class="media-body">
                     <h6 class="media-heading"><?= $comments['full_name']; ?></h6>
                     <p class="text-muted"><?= $comments['date_added']; ?></p>

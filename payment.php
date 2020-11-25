@@ -89,7 +89,7 @@
                             ?>  
                                     <div class="row" style="margin-bottom: 10px;" id="<?= $bookDetails['book_id']; ?>">
                                         <div class="col-xs-4 col-md-2 text-center">
-                                            <img class="img-responsive" src="images/books/<?= $bookDetails['book_title'];?>.<?= $bookDetails['ext'];?>" style="height: 150px; width: 100%;" alt="">
+                                            <img class="img-responsive lazy" data-src="images/books/<?= $bookDetails['book_title'];?>.<?= $bookDetails['ext'];?>" style="height: 150px; width: 100%;" alt="">
                                         </div>
                                         <div class="col-xs-8 col-md-10">
                                             <div class="row">

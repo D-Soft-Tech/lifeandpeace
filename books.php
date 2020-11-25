@@ -345,7 +345,7 @@ The three most essential aspect of our family are: Sound Teachings, Sweet Fellow
                 <div class="row">
                     <div class="col-md-2 col-xs-4 mx-1">
                         <div class="text-center" id="book-top">
-                            <img class="img-resoponsive" src="images/books/<?= $books['book_title']; ?>.<?= $books['ext']; ?>" alt="<?= $books['book_title']; ?>" style="height: 200px; width: 100%;">
+                            <img class="img-resoponsive lazy" data-src="images/books/<?= $books['book_title']; ?>.<?= $books['ext']; ?>" alt="<?= $books['book_title']; ?>" style="height: 200px; width: 100%;">
                             <h6 class="text-center"><?= $books['price']; ?></h6>
                             <div class="overlay">
                                 <form action="books.php" method="POST">

@@ -270,14 +270,14 @@ include_once 'header/header2.php';
                                 <!-- change the value of the src attribute of the source tag below to $link latter -->
                                 <source src="audio_messages/grace.mp3" type="audio/mp3">
                             </audio>
-                            <img class="img-resoponsive" src="images/onair2.jpg" style="height: 150px; width: 100%;" />
+                            <img class="img-resoponsive lazy" data-src="images/onair2.jpg" style="height: 150px; width: 100%;" />
                         
                         <?php
                         }
                         else{
                         ?>
 
-                            <img class="img-resoponsive" src="images/Off-Air-3.jpg" style="height: 150px; width: 100%;" />
+                            <img class="img-resoponsive lazy" data-src="images/Off-Air-3.jpg" style="height: 150px; width: 100%;" />
                         
                         <?php
                         }
@@ -357,7 +357,7 @@ include_once 'header/header2.php';
             <div class="row">
                 <div class="col-xs-12" style="height: 150px; width: 100%; margin-x: auto;">
                     <div class="text-center" id="book-top">
-                        <img class="img-resoponsive" src="images/audio/<?= $audios['title']; ?>.<?= $audios['ext']; ?>" alt="<?= $audios['title']; ?>" style="height: 150px; width: 100%;" />
+                        <img class="img-resoponsive lazy" data-src="images/audio/<?= $audios['title']; ?>.<?= $audios['ext']; ?>" alt="<?= $audios['title']; ?>" style="height: 150px; width: 100%;" />
                         <audio class="overlay_audio" controls style="height: 30px;">
                             <source src="audio_messages/<?= $audios['title']; ?>.<?= $audios['ext2']; ?>">
                         </audio>

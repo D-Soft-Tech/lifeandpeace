@@ -110,8 +110,8 @@
             <div class="row">
               <div class="col-md-12">
                 <article class="blog-content">
-                    <img src="images/event/weeklyProgram/<?= $events['title']; ?>.<?= $events['ext']; ?>" alt="<?= $events['title']; ?>"  
-                    class="img-responsive has-margin-xs-bottom" />
+                    <img data-src="images/event/weeklyProgram/<?= $events['title']; ?>.<?= $events['ext']; ?>" alt="<?= $events['title']; ?>"  
+                    class="img-responsive has-margin-xs-bottom lazy" />
                     <p class="text-justify"><?= $events['meeting_details']; ?></p>
                 </article>
               </div>

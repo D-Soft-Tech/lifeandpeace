@@ -193,7 +193,7 @@
           <div class="row">
             <div class="col-xs-12">
               <div class="text-center" id="book-top">
-                <img class="img-fulid img-responsive" style="height: 30vh; margin-right: auto; margin-left: auto;" src="<?php echo 'images/audio/'.$messages['title'].'.'.$messages['ext']; ?>" style="height: 100%; width: 100%;"alt="church">
+                <img class="img-fulid img-responsive lazy" style="height: 30vh; margin-right: auto; margin-left: auto;" data-src="<?php echo 'images/audio/'.$messages['title'].'.'.$messages['ext']; ?>" style="height: 100%; width: 100%;"alt="church">
                 <audio class="overlay_audio" controls style="height: 30px;">
                     <source src="audio_messages/<?= $messages['title']; ?>.<?= $messages['ext2']; ?>" type="audio/<?= $messages['ext2']; ?>">
                 </audio>
@@ -297,7 +297,7 @@
         <div class="section-title">
           <h4> RECENT SERMONS </h4>
         </div>
-        <a href="audio-gallery.php" title="Audio Messages"><img src="images/audio2.jpg" class="img-responsive center-block" alt="Recent Sermons"></a>
+        <a href="audio-gallery.php" title="Audio Messages"><img data-src="images/audio2.jpg" class="img-responsive center-block lazy" alt="Recent Sermons"></a>
         <div class="list-group">
           <?php
             $recentSermon = $call->recent_sermons();
@@ -342,7 +342,7 @@
         $prg_percent = ceil(abs($pledged/$donation['target_amount']) * 100);
       ?>
   <div class="charity-box">
-    <div class="charity-image"> <img src="images/donation/<?= $donation['title']; ?>.<?= $donation['ext']; ?>" class="img-responsive" alt="Donation"></div>
+    <div class="charity-image"> <img data-src="images/donation/<?= $donation['title']; ?>.<?= $donation['ext']; ?>" class="img-responsive lazy" alt="Donation"></div>
     <div class="charity-desc">
       <h4><?= $donation['title']; ?></h4>
       <p> Posted on <a class="link-reverse"><?= $donation['date_posted']; ?></a> 
@@ -398,7 +398,7 @@
       {
 
     ?>
-    <div class="col-sm-4 col-md-3"> <a class="fancybox" href="images/gallery/<?= $photos['title']; ?>.<?= $photos['ext']; ?>" data-fancybox-group="gallery" title="<?= $photos['title']; ?>"> <img src="images/gallery/<?= $photos['title']; ?>.<?= $photos['ext']; ?>" class="img-responsive" width="270" height="270" alt="<?= $photos['title']; ?>"> </a> </div>
+    <div class="col-sm-4 col-md-3"> <a class="fancybox" href="images/gallery/<?= $photos['title']; ?>.<?= $photos['ext']; ?>" data-fancybox-group="gallery" title="<?= $photos['title']; ?>"> <img data-src="images/gallery/<?= $photos['title']; ?>.<?= $photos['ext']; ?>" class="img-responsive lazy" width="270" height="270" alt="<?= $photos['title']; ?>"> </a> </div>
     <?php 
       }
     ?>
