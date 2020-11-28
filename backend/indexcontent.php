@@ -178,30 +178,22 @@
     </div>
 </div>
 <div class="row">
+    <?php
+        $focus_sql = "SELECT * FROM focus WHERE id = 1";
 
+        $stmt = $conn->query($focus_sql);
+        $focus_result = $stmt->fetch();
+    ?>
     <div class="col-md-12">
         <div class="alert alert-success fade show">
             <div class="row card-body">
                 <div class="text-center col-12">
-                    <h5 class="card-title text-center lead" id="focusForTheMonthTitle">Focus for this month</h5>
-                    <h6 id="anchorScript">Mt 6 : 3 - 10</h6>
+                    <h5 class="card-title text-center lead" id="focusForTheMonthTitle"><?= $focus_result['theme']; ?></h5>
+                    <h6 id="anchorScript"><?= $focus_result['script']; ?></h6>
                 </div>
                 <div class="col-xs-12 px-2">
-                    <p class="mb-0 text-justify" id="focusForTheMonthDetails">All Bootstrap 4 helper classes 
-                    available in the official Bootstrap documentation are also available 
-                    in ArchitectUI Framework: Spacing, resets, 
-                    typography utilities, 
-                    sizing and others.
-                    All Bootstrap 4 helper classes 
-                    available in the official Bootstrap documentation are also available 
-                    in ArchitectUI Framework: Spacing, resets, 
-                    typography utilities, 
-                    sizing and others.
-                    All Bootstrap 4 helper classes 
-                    available in the official Bootstrap documentation are also available 
-                    in ArchitectUI Framework: Spacing, resets, 
-                    typography utilities, 
-                    sizing and others.
+                    <p class="mb-0 text-justify" id="focusForTheMonthDetails">
+                        <?= $focus_result['details']; ?>
                     </p>
                     <br />
                 </div>
