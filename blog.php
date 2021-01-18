@@ -90,6 +90,19 @@
 
   $pages = pages();
 
+  function remove_froala_link($article_with_link)
+  {
+    $needle = '<p data-f-id="pbf" style="text-align: center; font-size: 14px; margin-top: 30px; opacity: 0.65; font-family: sans-serif;">Powered by <a href="https://www.froala.com/wysiwyg-editor?pb=1" title="Froala Editor">Froala Editor</a></p>';
+    
+    if(strpos($article_with_link, $needle) === false)
+    {
+      return $article_with_link;
+    }else{
+      $article_without_link = str_replace($needle, "", $article_with_link);
+      return $article_without_link;
+    }
+  }
+
   function previous()
   {
       global $pages;
@@ -196,7 +209,7 @@
           <div class="col-md-8 col-sm-8 bulletin">
             <h4 class="media-heading"><?= $articles['article_title']; ?> </h4>
             <p>Posted on <?= $articles['date_added']; ?> by <a class="link-reverse"><?= $articles['article_author']; ?></a></p>
-            <p>  <?= truncate($articles['article_details']); ?>...</p>
+            <p>  <?= truncate(remove_froala_link($articles['article_details'])); ?>...</p>
             <a class="btn btn-primary" href="blog-single.php?articleID=<?= $articles['articles_id']; ?>" role="button">Read Article →</a> </div>
         </div>
       <?php endforeach; ?>

@@ -14,6 +14,19 @@
 
   $alertMessage = "";
 
+  function remove_froala_link($article_with_link)
+  {
+    $needle = '<p data-f-id="pbf" style="text-align: center; font-size: 14px; margin-top: 30px; opacity: 0.65; font-family: sans-serif;">Powered by <a href="https://www.froala.com/wysiwyg-editor?pb=1" title="Froala Editor">Froala Editor</a></p>';
+    
+    if(strpos($article_with_link, $needle) === false)
+    {
+      return $article_with_link;
+    }else{
+      $article_without_link = str_replace($needle, "", $article_with_link);
+      return $article_without_link;
+    }
+  }
+
   function disable_button()
   {
     if(isset($_SESSION['username_frontEnd']) && isset($_SESSION['password_frontEnd']) && !empty($_SESSION['username_frontEnd']) && !empty($_SESSION['password_frontEnd']))
@@ -138,7 +151,7 @@
 
       <div class="subpage-head has-margin-bottom" id="topbar">
         <div class="container" style="color: #fff; font-weight: bold; font-size: 2em;">
-          <h3><span id="shadow" style="color: #fff; font-size: 1.5em;"><?= $article['article_title'] ?></span></h3>
+          <h3><span id="shadow" style="color: #fff; font-size: 1.5em;"><?= $article['article_title']; ?></span></h3>
           <p class="lead" id="shadow" style="font-size: 0.7em;"><span>Posted on</span> <?= $article['date_added'] ?><a style="color: #fff; text-shadow: 2px 2px 0 #000;"> by <?= $article['article_author']; ?></a></p>
         </div>
       </div>
@@ -158,7 +171,7 @@
           <div class="col-md-9 has-margin-bottom">
             <article class="blog-content">
               <p class="text-justify">
-                <?= $article['article_details']; ?>
+                <?= remove_froala_link($article['article_details']); ?>
               </p>
             </article>
             <section class="comments-block">
